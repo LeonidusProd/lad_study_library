@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+
 popular_books = [
     {'name': 'Название популярной книги 1', 'author': 'Автор 1', 'foto': '../../static/img/someBook.png'},
     {'name': 'Название популярной книги 2', 'author': 'Автор 2', 'foto': '../../static/img/someBook.png'},
