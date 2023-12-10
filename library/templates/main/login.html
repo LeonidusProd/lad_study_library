@@ -1,0 +1,30 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block header %}{% endblock header %}
+{% block nav %}{% endblock nav %}
+{% block section %}
+<div class="login_container">
+    <label for="username"><b>Имя пользователя</b></label>
+    <input type="text" placeholder="Имя пользователя" id="username" required>
+
+    <label for="password"><b>Пароль</b></label>
+    <input type="password" placeholder="Пароль" id="password" required>
+
+    <button type="submit" onclick="log_in()">Войти</button>
+</div>
+
+<script>
+    function log_in(){
+        var us_name = document.getElementById('username').value;
+        var pass = document.getElementById('password').value;
+        if (us_name.trim() !== '' && pass.trim() !== '') {
+            alert('Вы вошли, возможно');
+        } else {
+            alert('Куда!? А данные ввести?');
+        }
+    }
+</script>
+
+{% endblock section %}
+{% block footer %}{% endblock footer %}
+

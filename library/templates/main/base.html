@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <title>Библиотека</title>
+</head>
+<body>
+    <header>
+        <a href="../" class="logo-link">
+            <img src="{% static 'img/logo.png' %}" alt="Логотип библиотеки" class="logo">
+        </a>
+        <h1>Добро пожаловать в нашу библиотеку</h1>
+        <div class="login_menu">
+            <button onclick="login()" class="lr_butt">
+                Войти
+            </button>
+            <button onclick="register()" class="lr_butt">
+                Регистрация
+            </button>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../">Главная</a></li>
+            <li><a href="../books/">Каталог</a></li>
+            <li><a href="../about/">О нас</a></li>
+            <li><a href="../contact/">Контакты</a></li>
+        </ul>
+        <div class="search_inp">
+            <input type="search" id="search_input" placeholder="Поиск по названию или автору...">
+            <button onclick="search()">
+                <img src="{% static 'img/search.ico' %}">
+            </button>
+        </div>
+    </nav>
+    <section>{% block section %}{% endblock section %}</section>
+    <footer>
+        <p>&copy; 2023 Библиотека. Все права защищены.</p>
+    </footer>
+
+    <script>
+        function search() {
+          var searchTerm = document.getElementById('search_input').value;
+          if (searchTerm.trim() !== '') {
+            // Выполнить действия поиска, например, перейти на страницу поиска
+            window.location.href = '../search/?search=' + encodeURIComponent(searchTerm);
+          } else {
+            
+          }
+        }
+
+        function login() {
+          window.location.href = '../login';
+        }
+
+        function register() {
+          window.location.href = '../register';
+        }
+    </script>
+</body>
+</html>

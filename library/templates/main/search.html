@@ -1,0 +1,10 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block header %}{% endblock header %}
+{% block nav %}{% endblock nav %}
+{% block section %}
+    <h1 class="text_plug">
+        <p>Это страница поиска.</p>
+        <p>Мы пока не умеем делать базы данных, так что и искать нам ваше "{{ search_request }}" неоткуда.</p></h1>
+{% endblock section %}
+{% block footer %}{% endblock footer %}

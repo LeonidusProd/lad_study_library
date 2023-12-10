@@ -1,0 +1,21 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block header %}{% endblock header %}
+{% block nav %}{% endblock nav %}
+{% block section %}
+<section id="featured-books">
+    <h2>Популярные книги</h2>
+
+    {% for book in pop_books %}
+
+        <div class="book">
+            <img src="{{ book.foto }}" alt="Книга">
+            <h3>{{ book.name }}</h3>
+            <p>Автор: {{ book.author }}</p>
+        </div>
+
+    {% endfor %}
+
+</section>
+{% endblock section %}
+{% block footer %}{% endblock footer %}
