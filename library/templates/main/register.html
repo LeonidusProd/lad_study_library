@@ -3,25 +3,40 @@
 {% block header %}{% endblock header %}
 {% block nav %}{% endblock nav %}
 {% block section %}
-    <div class="login_container">
-        <label for="username"><b>Имя пользователя</b></label>
+    <!-- <div class="login_container"> -->
+        <form method="post" class="login_container">
+            {% csrf_token %}
+            {{ form.user_name.label_tag }}
+            {{ form.user_name.as_widget }}
+            {{ form.user_email.label_tag }}
+            {{ form.user_email.as_widget }}
+            {{ form.user_password.label_tag }}
+            {{ form.user_password.as_widget }}
+            {{ form.user_password_rep.label_tag }}
+            {{ form.user_password_rep.as_widget }}
+
+            <button type="submit" onclick="reg()">Создать аккаунт</button>
+        </form>
+
+        <!-- <label for="username"><b>Имя пользователя</b></label>
         <input type="text" placeholder="Имя пользователя" id="username" required>
 
         <label for="email"><b>Email</b></label>
         <input type="email" placeholder="Email" id="email" required>
 
         <label for="password"><b>Пароль</b></label>
-        <input type="password" placeholder="Пароль" id="password" required>
+        <input type="password" placeholder="Пароль" id="password" required> -->
 
-        <button type="submit" onclick="reg()">Создать аккаунт</button>
-    </div>
+        <!-- <button type="submit" onclick="reg()">Создать аккаунт</button> -->
+    <!-- </div> -->
 
     <script>
         function reg(){
             var us_name = document.getElementById('username').value;
             var mail = document.getElementById('email').value;
             var pass = document.getElementById('password').value;
-            if (us_name.trim() !== '' && pass.trim() !== '') {
+            var pass_rep = document.getElementById('password_rep').value;
+            if ((us_name.trim() !== '' && pass.trim() !== '') && (pass_rep == pass)) {
                 alert('Вы зарегались, возможно');
             } else {
                 alert('Куда!? А данные ввести?');

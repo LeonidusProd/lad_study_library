@@ -3,7 +3,17 @@
 {% block header %}{% endblock header %}
 {% block nav %}{% endblock nav %}
 {% block section %}
-<div class="login_container">
+<form method="post" class="login_container">
+    {% csrf_token %}
+    {{ form.user_name.label_tag }}
+    {{ form.user_name.as_widget }}
+    {{ form.user_password.label_tag }}
+    {{ form.user_password.as_widget }}
+
+    <button type="submit" onclick="reg()">Войти</button>
+</form>
+
+<!-- <div class="login_container">
     <label for="username"><b>Имя пользователя</b></label>
     <input type="text" placeholder="Имя пользователя" id="username" required>
 
@@ -11,7 +21,7 @@
     <input type="password" placeholder="Пароль" id="password" required>
 
     <button type="submit" onclick="log_in()">Войти</button>
-</div>
+</div> -->
 
 <script>
     function log_in(){

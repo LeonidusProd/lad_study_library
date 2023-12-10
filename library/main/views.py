@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import *
 
 popular_books = [
     {'name': 'Название популярной книги 1', 'author': 'Автор 1', 'foto': '../../static/img/someBook.png'},
@@ -44,10 +45,38 @@ def contact(request):
     return render(request, 'main/contact.html')
 
 def login(request):
-    return render(request, 'main/login.html')
+    # return render(request, 'main/login.html')
+
+    if request.method == 'POST':
+        login_form = LoginForm(request.POST)
+        if login_form.is_valid():
+            print(login_form.cleaned_data)
+            return render(request, 'main/index.html', context={'pop_books': popular_books})
+        else:
+            pass
+            # return HttpResponse("Ошибка введённых данных")
+    else:
+        login_form = LoginForm()
+        data = {'form': login_form}
+        return render(request, 'main/login.html', context=data)
 
 def register(request):
-    return render(request, 'main/register.html')
+    # reg_form = RegistrationForm()
+    # data = {'form': reg_form}
+    # return render(request, 'main/register.html', context=data)
+
+    if request.method == 'POST':
+        reg_form = RegistrationForm(request.POST)
+        if reg_form.is_valid():
+            print(reg_form.cleaned_data)
+            return render(request, 'main/index.html', context={'pop_books': popular_books})
+        else:
+            pass
+            # return HttpResponse("Ошибка введённых данных")
+    else:
+        reg_form = RegistrationForm()
+        data = {'form': reg_form}
+        return render(request, 'main/register.html', context=data)
 
 def what():
     pass
