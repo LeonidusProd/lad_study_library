@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import *
+from .models import *
 
 popular_books = [
     {'name': 'Название популярной книги 1', 'author': 'Автор 1', 'foto': '../../static/img/someBook.png'},
@@ -69,6 +70,12 @@ def register(request):
         reg_form = RegistrationForm(request.POST)
         if reg_form.is_valid():
             print(reg_form.cleaned_data)
+            new_user = User(
+                username=reg_form.cleaned_data['user_name'],
+                email=reg_form.cleaned_data['user_email'],
+                password=reg_form.cleaned_data['user_password']
+            )
+            new_user.save()
             return render(request, 'main/index.html', context={'pop_books': popular_books})
         else:
             pass
