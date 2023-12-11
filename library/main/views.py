@@ -12,7 +12,15 @@ popular_books = [
 ]
 
 def index(request):
-    return render(request, 'main/index.html', context={'pop_books': popular_books})
+    return render(
+        request,
+        'main/index.html',
+        context={
+            'pop_books': popular_books,
+            'is_login': False,
+            'username': ''
+        }
+    )
 
 def books(request, book_id=0):
     if book_id == 0:
@@ -76,7 +84,15 @@ def register(request):
                 password=reg_form.cleaned_data['user_password']
             )
             new_user.save()
-            return render(request, 'main/index.html', context={'pop_books': popular_books})
+            return render(
+                request,
+                'main/index.html',
+                context={
+                    'pop_books': popular_books,
+                    'is_login': True,
+                    'username': reg_form.cleaned_data['user_name']
+                }
+            )
         else:
             pass
             # return HttpResponse("Ошибка введённых данных")

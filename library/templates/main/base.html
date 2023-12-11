@@ -14,12 +14,27 @@
         </a>
         <h1>Добро пожаловать в нашу библиотеку</h1>
         <div class="login_menu">
+            <!-- <button onclick="login()" class="lr_butt">
+                Войти
+            </button>
+            <button onclick="register()" class="lr_butt">
+                Регистрация
+            </button> -->
+            {% if is_login %}
+            <span>{{ username }}</span>
+            <button onclick="logout()" class="lr_butt">
+                Выйти
+            </button>
+            {% else %}
             <button onclick="login()" class="lr_butt">
                 Войти
             </button>
             <button onclick="register()" class="lr_butt">
                 Регистрация
             </button>
+            {% endif %}
+            
+            
         </div>
     </header>
     <nav>
