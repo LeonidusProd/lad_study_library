@@ -134,7 +134,7 @@ footer {
     flex-direction: column;
 }
 
- .login_container label {
+.login_container label {
     font-weight: bold;
 } 
 
@@ -146,6 +146,11 @@ footer {
     border: 1px solid #ccc;
     box-sizing: border-box;
     border-radius: 10px;
+}
+
+span.errors {
+    color: red;
+    font-size: 13px;
 }
 
 .login_container button {

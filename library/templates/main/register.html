@@ -6,14 +6,18 @@
     <!-- <div class="login_container"> -->
         <form method="post" class="login_container">
             {% csrf_token %}
-            {{ form.user_name.label_tag }}
-            {{ form.user_name.as_widget }}
-            {{ form.user_email.label_tag }}
-            {{ form.user_email.as_widget }}
-            {{ form.user_password.label_tag }}
-            {{ form.user_password.as_widget }}
-            {{ form.user_password_rep.label_tag }}
-            {{ form.user_password_rep.as_widget }}
+            {{ form.username.label_tag }}
+            {{ form.username.as_widget }}
+            <span class="errors">{{ form.username.errors.as_text|linebreaksbr|cut:"* " }}</span>
+            {{ form.email.label_tag }}
+            {{ form.email.as_widget }}
+            <span class="errors">{{ form.email.errors.as_text|linebreaksbr|cut:"* " }}</span>
+            {{ form.password1.label_tag }}
+            {{ form.password1.as_widget }}
+            <span class="errors">{{ form.password1.errors.as_text|linebreaksbr|cut:"* " }}</span>
+            {{ form.password2.label_tag }}
+            {{ form.password2.as_widget }}
+            <span class="errors">{{ form.password2.errors.as_text|linebreaksbr|cut:"* " }}</span>
 
             <button type="submit" onclick="reg()">Создать аккаунт</button>
         </form>

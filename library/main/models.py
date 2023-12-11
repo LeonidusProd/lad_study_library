@@ -1,12 +1,14 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-class User(models.Model):
-    name = models.CharField(max_length=50, null=False, default='Undef')
-    surname = models.CharField(max_length=50, null=False, default='Undef')
-    username = models.CharField(max_length=50, null=False, default='Undef')
-    email = models.CharField(max_length=100, null=False, default='Undef')
-    password = models.CharField(max_length=100, null=False, default='Undef')
-    is_admin = models.BooleanField(null=False, default=False)
+
+# class User(User):
+#     name = models.CharField(max_length=50, null=False, default='Undef')
+#     surname = models.CharField(max_length=50, null=False, default='Undef')
+#     # username = models.CharField(max_length=50, null=False, default='Undef')
+#     # email = models.CharField(max_length=100, null=False, default='Undef')
+#     # password = models.CharField(max_length=100, null=False, default='Undef')
+#     is_admin = models.BooleanField(null=False, default=False)
 
 class Author(models.Model):
     name = models.CharField(max_length=50, null=False)

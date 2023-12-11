@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import *
 from .models import *
 
@@ -69,37 +71,39 @@ def login(request):
         data = {'form': login_form}
         return render(request, 'main/login.html', context=data)
 
-def register(request):
-    # reg_form = RegistrationForm()
-    # data = {'form': reg_form}
-    # return render(request, 'main/register.html', context=data)
+# def register(request):
+#     # reg_form = RegistrationForm()
+#     # data = {'form': reg_form}
+#     # return render(request, 'main/register.html', context=data)
+#
+#     if request.method == 'POST':
+#         reg_form = RegistrationForm(request.POST)
+#         if reg_form.is_valid():
+#             # print(reg_form.cleaned_data)
+#             new_user = User(
+#                 username=reg_form.cleaned_data['username'],
+#                 email=reg_form.cleaned_data['email'],
+#                 password=reg_form.cleaned_data['password1']
+#             )
+#             new_user.save()
+#             return render(
+#                 request,
+#                 'main/index.html',
+#                 context={
+#                     'pop_books': popular_books,
+#                     # 'is_login': True,
+#                     # 'username': reg_form.cleaned_data['user_name']
+#                 }
+#             )
+#         else:
+#             # pass
+#             return HttpResponse("Ошибка введённых данных")
+#     else:
+#         reg_form = RegistrationForm()
+#         data = {'form': reg_form}
+#         return render(request, 'main/register.html', context=data)
 
-    if request.method == 'POST':
-        reg_form = RegistrationForm(request.POST)
-        if reg_form.is_valid():
-            print(reg_form.cleaned_data)
-            new_user = User(
-                username=reg_form.cleaned_data['user_name'],
-                email=reg_form.cleaned_data['user_email'],
-                password=reg_form.cleaned_data['user_password']
-            )
-            new_user.save()
-            return render(
-                request,
-                'main/index.html',
-                context={
-                    'pop_books': popular_books,
-                    'is_login': True,
-                    'username': reg_form.cleaned_data['user_name']
-                }
-            )
-        else:
-            pass
-            # return HttpResponse("Ошибка введённых данных")
-    else:
-        reg_form = RegistrationForm()
-        data = {'form': reg_form}
-        return render(request, 'main/register.html', context=data)
-
-def what():
-    pass
+class register(CreateView):
+    form_class = RegistrationForm
+    template_name = 'main/register.html'
+    success_url = '../'
