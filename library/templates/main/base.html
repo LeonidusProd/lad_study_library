@@ -20,18 +20,18 @@
             <button onclick="register()" class="lr_butt">
                 Регистрация
             </button> -->
-            {% if is_login %}
-            <span>{{ username }}</span>
-            <button onclick="logout()" class="lr_butt">
-                Выйти
-            </button>
+            {% if request.user.is_authenticated %}
+                <span>{{ user.username }}</span>
+                <button onclick="logout()" class="lr_butt">
+                    Выйти
+                </button>
             {% else %}
-            <button onclick="login()" class="lr_butt">
-                Войти
-            </button>
-            <button onclick="register()" class="lr_butt">
-                Регистрация
-            </button>
+                <button onclick="login()" class="lr_butt">
+                    Войти
+                </button>
+                <button onclick="register()" class="lr_butt">
+                    Регистрация
+                </button>
             {% endif %}
             
             
@@ -73,6 +73,10 @@
 
         function register() {
           window.location.href = '../register';
+        }
+
+        function logout() {
+          window.location.href = '../logout';
         }
     </script>
 </body>

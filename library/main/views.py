@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.contrib.auth import logout
+from django.contrib.auth.views import LoginView
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -55,21 +57,21 @@ def about(request):
 def contact(request):
     return render(request, 'main/contact.html')
 
-def login(request):
-    # return render(request, 'main/login.html')
-
-    if request.method == 'POST':
-        login_form = LoginForm(request.POST)
-        if login_form.is_valid():
-            print(login_form.cleaned_data)
-            return render(request, 'main/index.html', context={'pop_books': popular_books})
-        else:
-            pass
-            # return HttpResponse("Ошибка введённых данных")
-    else:
-        login_form = LoginForm()
-        data = {'form': login_form}
-        return render(request, 'main/login.html', context=data)
+# def login(request):
+#     # return render(request, 'main/login.html')
+#
+#     if request.method == 'POST':
+#         login_form = LoginForm(request.POST)
+#         if login_form.is_valid():
+#             print(login_form.cleaned_data)
+#             return render(request, 'main/index.html', context={'pop_books': popular_books})
+#         else:
+#             pass
+#             # return HttpResponse("Ошибка введённых данных")
+#     else:
+#         login_form = LoginForm()
+#         data = {'form': login_form}
+#         return render(request, 'main/login.html', context=data)
 
 # def register(request):
 #     # reg_form = RegistrationForm()
@@ -106,4 +108,15 @@ def login(request):
 class register(CreateView):
     form_class = RegistrationForm
     template_name = 'main/register.html'
-    success_url = '../'
+    success_url = '../login'
+
+class login(LoginView):
+    form_class = LoginForm
+    template_name = 'main/login.html'
+
+    def get_success_url(self):
+        return '../'
+
+def logout_user(request):
+    logout(request)
+    return redirect('../login')
