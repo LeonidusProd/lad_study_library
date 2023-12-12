@@ -1,0 +1,60 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block header %}{% endblock header %}
+{% block nav %}{% endblock nav %}
+{% block section %}
+<div class="catalog_container">
+    <aside class="catalog_filters">
+      <h2>Фильтры</h2>
+      <div id="genreFilters">
+        <label><input type="checkbox" value="fiction"> Художественная литература</label>
+        <label><input type="checkbox" value="nonfiction"> Нехудожественная литература</label>
+        <label><input type="checkbox" value="fantasy"> Фэнтези</label>
+        <label><input type="checkbox" value="science"> Научная литература</label>
+        <!-- Добавьте другие жанры по необходимости -->
+      </div>
+      <!-- Добавьте фильтры по вашему усмотрению -->
+    </aside>
+
+    <section class="book-cards" id="bookCards">
+      <!-- Карточки книг будут добавлены с использованием JavaScript -->
+    </section>
+  </div>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  // Ваши данные о книгах (замените на свои данные)
+  const books = [
+    { title: "Долгая дорога домой", author: "Юн Сёндо", cover: "book1.jpg" },
+    { title: "Преступление и наказание", author: "Федор Достоевский", cover: "book2.jpg" },
+    // Добавьте больше книг по необходимости
+  ];
+
+  const bookCardsContainer = document.getElementById("bookCards");
+
+  // Генерация карточек книг
+  books.forEach(book => {
+    const bookCard = document.createElement("div");
+    bookCard.classList.add("book-card");
+    bookCard.innerHTML = `
+      <img src="${book.cover}" alt="${book.title}">
+      <h3>${truncateText(book.title, 25)}</h3>
+      <p>${book.author}</p>
+    `;
+    bookCard.addEventListener("click", () => {
+      // Действия при клике на карточку (например, переход на страницу книги)
+      alert(`Вы выбрали книгу: ${book.title}`);
+    });
+    bookCardsContainer.appendChild(bookCard);
+  });
+
+  // Обрезка текста с добавлением многоточия
+  function truncateText(text, maxLength) {
+    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+  }
+});
+  </script>
+{% endblock section %}
+{% block footer %}{% endblock footer %}

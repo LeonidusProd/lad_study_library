@@ -28,11 +28,9 @@ def index(request):
 
 def books(request, book_id=0):
     if book_id == 0:
-        output = f'<h2>Список всех книг</h2>'
+        return render(request, 'main/catalog.html')
     else:
-        output = f'<h2>Детали книги с id={book_id}</h2>'
-
-    return HttpResponse(output)
+        return render(request, 'main/catalog.html')
 
 def add(request):
     output = f'<h2>Форма добавления новой книги</h2>'

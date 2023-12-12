@@ -4,5 +4,26 @@
 {% block nav %}{% endblock nav %}
 {% block section %}
 Личный кабинет пользователя {{ user.username }} заглушка
+<section>
+    <h2>Персональные данные</h2>
+    <form>
+      <label for="username">Имя пользователя:</label>
+      <input type="text" id="username" name="username" placeholder="Введите ваше имя" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+
+      <button type="submit">Сохранить изменения</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Список "Читаю"</h2>
+    <ul>
+      <li>Название книги 1</li>
+      <li>Название книги 2</li>
+      <!-- Добавьте больше книг по необходимости -->
+    </ul>
+  </section>
 {% endblock section %}
 {% block footer %}{% endblock footer %}

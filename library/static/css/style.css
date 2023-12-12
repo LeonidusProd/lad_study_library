@@ -166,3 +166,45 @@ span.errors {
     border-radius: 10px;
     border-color: #4CAF50;
 }
+
+.catalog_container {
+  display: flex;
+}
+
+.catalog_filters {
+  flex: 1;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+#genreFilters {
+  margin-top: 10px;
+}
+
+.book-cards {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.book-card {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
