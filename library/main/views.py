@@ -120,3 +120,6 @@ class login(LoginView):
 def logout_user(request):
     logout(request)
     return redirect('../login')
+
+def personal_cab(request):
+    return render(request, 'main/personalCab.html')

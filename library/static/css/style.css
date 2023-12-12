@@ -36,7 +36,8 @@ header {
 
 .login_menu span{
     color: #333;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
+    text-decoration: none;
 }
 
 .lr_butt {
