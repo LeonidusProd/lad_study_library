@@ -3,27 +3,38 @@
 {% block header %}{% endblock header %}
 {% block nav %}{% endblock nav %}
 {% block section %}
-Личный кабинет пользователя {{ user.username }} заглушка
-<section>
-    <h2>Персональные данные</h2>
-    <form>
-      <label for="username">Имя пользователя:</label>
-      <input type="text" id="username" name="username" placeholder="Введите ваше имя" required>
+<!-- Личный кабинет пользователя {{ user.username }} заглушка -->
+<div class="pers_cab_cont">
+  <div class="read_list">
+    <h2>Список "Читаю"</h2>
+    {% for book in reading_list %}
+      <div class="reading_book">
+        <a href="../books/book/{{ book.id }}">
+          <div class="reading_book_foto">
+            <img src="{{ book.foto }}">
+          </div>
+          <div class="reading_book_info">
+            <h3>{{ book.author }}</h3>
+            <span>{{ book.name }}</span>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+  <div class="pers_data">
+    <h2>Персональные данные</h2>
+    <form method="post" class="login_container">
+      {% csrf_token %}
+
+      {{ form.username.label_tag }}
+      {{ form.username.as_widget }}
+      {{ form.email.label_tag }}
+      {{ form.email.as_widget }}
 
       <button type="submit">Сохранить изменения</button>
     </form>
-  </section>
-
-  <section>
-    <h2>Список "Читаю"</h2>
-    <ul>
-      <li>Название книги 1</li>
-      <li>Название книги 2</li>
-      <!-- Добавьте больше книг по необходимости -->
-    </ul>
-  </section>
+  </div>
+</div>
 {% endblock section %}
 {% block footer %}{% endblock footer %}

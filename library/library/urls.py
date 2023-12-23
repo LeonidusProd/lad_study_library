@@ -20,8 +20,8 @@ from main import views
 
 urlpatterns = [
     path('search/', views.search),
-    re_path(r'^books/edit/(?P<book_id>\d+)', views.edit),
-    re_path(r'^books/(?P<book_id>\d+)', views.books),
+    re_path(r'^books/book/(?P<book_id>\d+)', views.book_page),
+    re_path(r'^books/', views.books),
     path('about/', views.about),
     path('contact/', views.contact),
     path('login/', views.login.as_view()),

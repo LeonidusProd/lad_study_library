@@ -4,33 +4,52 @@
 {% block nav %}{% endblock nav %}
 {% block section %}
 <div class="catalog_container">
-    <aside class="catalog_filters">
-      <h2>Фильтры</h2>
-      <div id="genreFilters">
-        <label><input type="checkbox" value="fiction"> Художественная литература</label>
-        <label><input type="checkbox" value="nonfiction"> Нехудожественная литература</label>
-        <label><input type="checkbox" value="fantasy"> Фэнтези</label>
-        <label><input type="checkbox" value="science"> Научная литература</label>
-        <!-- Добавьте другие жанры по необходимости -->
-      </div>
+  <aside class="catalog_filters">
+    <h2>Фильтры</h2>
+    <div id="genreFilters">
+      Not yet
+      <!-- <label><input type="checkbox" value="fiction"> Художественная литература</label>
+      <label><input type="checkbox" value="nonfiction"> Нехудожественная литература</label>
+      <label><input type="checkbox" value="fantasy"> Фэнтези</label>
+      <label><input type="checkbox" value="science"> Научная литература</label> -->
+      <!-- Добавьте другие жанры по необходимости -->
+    </div>
       <!-- Добавьте фильтры по вашему усмотрению -->
-    </aside>
+  </aside>
 
+  <div class="catalog_list">
     <section class="book-cards" id="bookCards">
       <!-- Карточки книг будут добавлены с использованием JavaScript -->
     </section>
+
+    <div class="pagination">
+      <span class="step-links">
+          {% if page_obj.has_previous %}
+              <a href="?page=1">|  &lt;&lt; В начало  |</a>
+              <a href="?page={{ page_obj.previous_page_number }}">|  &lt; Предыдущая страница  |</a>
+          {% endif %}
+  
+          <span class="current">
+              |  Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}  |
+          </span>
+  
+          {% if page_obj.has_next %}
+              <a href="?page={{ page_obj.next_page_number }}">|  Следующая страница &gt;  |</a>
+              <a href="?page={{ page_obj.paginator.num_pages }}">|  В конец &gt;&gt;  |</a>
+          {% endif %}
+      </span>
+    </div>
   </div>
+</div>
 
 
+  {{ book_list|json_script:"book_list" }}
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
   // Ваши данные о книгах (замените на свои данные)
-  const books = [
-    { title: "Долгая дорога домой", author: "Юн Сёндо", cover: "book1.jpg" },
-    { title: "Преступление и наказание", author: "Федор Достоевский", cover: "book2.jpg" },
-    // Добавьте больше книг по необходимости
-  ];
+
+  const books = JSON.parse(document.getElementById('book_list').textContent);
 
   const bookCardsContainer = document.getElementById("bookCards");
 
@@ -45,7 +64,8 @@
     `;
     bookCard.addEventListener("click", () => {
       // Действия при клике на карточку (например, переход на страницу книги)
-      alert(`Вы выбрали книгу: ${book.title}`);
+      // alert(`Вы выбрали книгу: ${book.title}`);
+      window.location.href = 'book/' + book.id;
     });
     bookCardsContainer.appendChild(bookCard);
   });

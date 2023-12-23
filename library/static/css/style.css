@@ -208,3 +208,59 @@ span.errors {
   margin-bottom: 10px;
 }
 
+.pers_cab_cont{
+  display: flex;
+  justify-content: space-around;
+}
+
+.pers_data{
+  width: 200px;
+}
+
+.read_list{
+  width: 700px;
+}
+
+.reading_book a{
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
+
+.reading_book_foto img{
+  width: 50px;
+  height: inherit;
+}
+
+.reading_book_info{
+  margin-left: 15px;
+}
+
+.reading_book_info h3{
+  margin-top: 2px;
+  margin-bottom: 15px;
+}
+
+.catalog_container{
+  display: flex;
+}
+
+.catalog_list{
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pagination .step-links{
+  justify-content: center;
+  display: flex;
+}
+
+.pagination .step-links .current{
+  font-weight: bold;
+}
+
+.pagination a{
+  text-decoration: none;
+  color: black;
+}

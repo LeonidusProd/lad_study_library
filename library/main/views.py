@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator
 from .forms import *
 from .models import *
 
@@ -26,19 +27,65 @@ def index(request):
         }
     )
 
-def books(request, book_id=0):
-    if book_id == 0:
-        return render(request, 'main/catalog.html')
-    else:
-        return render(request, 'main/catalog.html')
+def books(request):
+    books = Book.objects.all()
+    paginator = Paginator(books, 16)
+
+    page = request.GET.get("page")
+
+    book_list = []
+    page_obj = paginator.get_page(page)
+    for book in page_obj:
+        book_list.append(
+            {
+                'id': book.pk,
+                'title': book.name,
+                'author': book.author.__str__(),
+                'cover': book.foto
+            }
+        )
+
+    data = {
+        'book_list': book_list,
+        'page_obj': page_obj
+    }
+
+    return render(
+        request,
+        'main/catalog.html',
+        context=data
+    )
+
+    # if page == 0:
+    #     book_list = []
+    #     for book in Book.objects.all():
+    #         book_list.append(
+    #             {
+    #                 'title': book.name,
+    #                 'author': book.author.__str__(),
+    #                 'cover': book.foto
+    #             }
+    #         )
+    #
+    #     data = {
+    #         'book_list': paginator.get_page(page_number)
+    #     }
+    #
+    #     return render(
+    #         request,
+    #         'main/catalog.html',
+    #         context=data
+    #     )
+    # else:
+    #     return render(request, 'main/catalog.html')
 
 def add(request):
     output = f'<h2>Форма добавления новой книги</h2>'
 
     return HttpResponse(output)
 
-def edit(request, book_id):
-    output = f'<h2>Форма редактирования информации о книге с id={book_id}</h2>'
+def book_page(request, book_id):
+    output = f'<h2>Страница с подробной информацией о книге с id={book_id}</h2>'
 
     return HttpResponse(output)
 
@@ -113,11 +160,59 @@ class login(LoginView):
     template_name = 'main/login.html'
 
     def get_success_url(self):
-        return '../'
+        return '../books/?page=1'
 
 def logout_user(request):
     logout(request)
     return redirect('../login')
 
 def personal_cab(request):
-    return render(request, 'main/personalCab.html')
+    if request.method == 'POST':
+        form = UserInfo(request.POST)
+        if form.is_valid():
+            user = User.objects.get(pk=request.user.pk)
+            user.username = form.cleaned_data['username']
+            user.email = form.cleaned_data['email']
+            user.save()
+
+            return render(
+                request,
+                'main/personalCab.html',
+                context=create_user_data(request, form)
+            )
+        else:
+            return HttpResponse("Ошибка введённых данных")
+    else:
+        form = UserInfo(initial={
+            'username': request.user.username,
+            'email': request.user.email
+        })
+
+        return render(
+            request,
+            'main/personalCab.html',
+            context=create_user_data(request, form)
+        )
+
+def create_user_data(request, form):
+    # form = UserInfo(initial={
+    #     'username': request.user.username,
+    #     'email': request.user.email
+    # })
+
+    reading_list = []
+    user_reading_list = User_Reading.objects.filter(user=request.user.pk)
+    for book in user_reading_list:
+        reading_list.append(
+            {
+                'id': book.book.pk,
+                'name': book.book.name,
+                'author': book.book.author,
+                'foto': book.book.foto
+            }
+        )
+
+    return {
+        'form': form,
+        'reading_list': reading_list
+    }
