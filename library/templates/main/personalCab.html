@@ -1,0 +1,40 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block header %}{% endblock header %}
+{% block nav %}{% endblock nav %}
+{% block section %}
+<!-- Личный кабинет пользователя {{ user.username }} заглушка -->
+<div class="pers_cab_cont">
+  <div class="read_list">
+    <h2>Список "Читаю"</h2>
+    {% for book in reading_list %}
+      <div class="reading_book">
+        <a href="../books/book/{{ book.id }}">
+          <div class="reading_book_foto">
+            <img src="{{ book.foto }}">
+          </div>
+          <div class="reading_book_info">
+            <h3>{{ book.author }}</h3>
+            <span>{{ book.name }}</span>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="pers_data">
+    <h2>Персональные данные</h2>
+    <form method="post" class="login_container">
+      {% csrf_token %}
+
+      {{ form.username.label_tag }}
+      {{ form.username.as_widget }}
+      {{ form.email.label_tag }}
+      {{ form.email.as_widget }}
+
+      <button type="submit">Сохранить изменения</button>
+    </form>
+  </div>
+</div>
+{% endblock section %}
+{% block footer %}{% endblock footer %}
