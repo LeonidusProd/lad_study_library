@@ -3,7 +3,20 @@
 {% block header %}{% endblock header %}
 {% block nav %}{% endblock nav %}
 {% block section %}
-<div class="login_container">
+<form method="post" class="login_container">
+    {% csrf_token %}
+    <span class="errors">{{ form.non_field_errors.as_text|linebreaksbr|cut:"* " }}</span>
+    {{ form.username.label_tag }}
+    {{ form.username.as_widget }}
+    <!-- <span class="errors">{{ form.username.errors.as_text|linebreaksbr|cut:"* " }}</span> -->
+    {{ form.password.label_tag }}
+    {{ form.password.as_widget }}
+    <!-- <span class="errors">{{ form.password.errors.as_text|linebreaksbr|cut:"* " }}</span> -->
+
+    <button type="submit" onclick="reg()">Войти</button>
+</form>
+
+<!-- <div class="login_container">
     <label for="username"><b>Имя пользователя</b></label>
     <input type="text" placeholder="Имя пользователя" id="username" required>
 
@@ -11,16 +24,16 @@
     <input type="password" placeholder="Пароль" id="password" required>
 
     <button type="submit" onclick="log_in()">Войти</button>
-</div>
+</div> -->
 
 <script>
     function log_in(){
         var us_name = document.getElementById('username').value;
         var pass = document.getElementById('password').value;
         if (us_name.trim() !== '' && pass.trim() !== '') {
-            alert('Вы вошли, возможно');
+            // alert('Вы вошли, возможно');
         } else {
-            alert('Куда!? А данные ввести?');
+            // alert('Куда!? А данные ввести?');
         }
     }
 </script>
