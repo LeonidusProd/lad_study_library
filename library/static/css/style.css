@@ -264,3 +264,52 @@ span.errors {
   text-decoration: none;
   color: black;
 }
+
+
+
+
+
+.book-info {
+  display: flex;
+}
+
+.book-cover img {
+  max-width: 300px;
+}
+
+.book-details {
+  margin-left: 2rem;
+}
+
+.book-details p {
+  margin: 0.5rem 0;
+}
+
+.book-description {
+  margin-top: 2rem;
+}
+
+.book-reviews h4 {
+  margin-top: 1rem;
+}
+
+.book-reviews form {
+  margin-top: 2rem;
+}
+
+.book-reviews label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.book-reviews textarea {
+  width: 100%;
+  height: 10rem;
+}
+
+.book-reviews button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+}

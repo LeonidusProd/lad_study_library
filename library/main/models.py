@@ -40,6 +40,9 @@ class Book_Genre(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, null=False)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE, null=False)
 
+    def __str__(self):
+        return f'{self.book}: {self.genre}'
+
 class User_Reading(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
     book = models.ForeignKey(Book, on_delete=models.CASCADE, null=False)

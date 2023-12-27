@@ -1,0 +1,47 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block header %}{% endblock header %}
+{% block nav %}{% endblock nav %}
+{% block section %}
+
+<section class="book-info">
+    <h2>{{ book.name }}</h2>
+    <div class="book-cover">
+      <img src="{{ book.foto }}" alt="Обложка книги">
+    </div>
+    <div class="book-details">
+      <p><strong>Автор:</strong> {{ book.author }}</p>
+      <p><strong>Жанр:</strong> {{ book.genries }}</p>
+      <p><strong>Год издания:</strong> {{ book.publication_year }}</p>
+      <p><strong>Издательство:</strong> {{ book.publisher }}</p>
+      <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+    </div>
+  </section>
+
+  <section class="book-description">
+    <h3>Описание книги</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tortor metus. Nullam euismod sapien vel nunc lobortis, nec consequat nibh pellentesque. Sed ac quam non urna imperdiet tincidunt. Fusce commodo, erat in eleifend finibus, nunc elit tristique leo, at lobortis felis mi nec velit. Nulla facilisi. Donec auctor ullamcorper nisi, id varius turpis bibendum eu. Donec aliquam ex vitae lectus vestibulum, sed rhoncus turpis maximus.</p>
+  </section>
+
+  <section class="book-reviews">
+    <h3>Отзывы о книге</h3>
+    <ul>
+      <li>
+        <h4>Имя Фамилия</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tortor metus. Nullam euismod sapien vel nunc lobortis, nec consequat nibh pellentesque.</p>
+      </li>
+      <li>
+        <h4>Имя Фамилия</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tortor metus. Nullam euismod sapien vel nunc lobortis, nec consequat nibh pellentesque.</p>
+      </li>
+    </ul>
+    <!-- <form>
+      <label for="review">Оставить отзыв:</label>
+      <textarea id="review" name="review"></textarea>
+      <button type="submit">Отправить</button>
+    </form> -->
+  </section>
+
+{% endblock section %}
+{% block footer %}{% endblock footer %}
+

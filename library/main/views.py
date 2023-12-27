@@ -85,9 +85,37 @@ def add(request):
     return HttpResponse(output)
 
 def book_page(request, book_id):
-    output = f'<h2>Страница с подробной информацией о книге с id={book_id}</h2>'
+    # output = f'<h2>Страница с подробной информацией о книге с id={book_id}</h2>'
 
-    return HttpResponse(output)
+    book = Book.objects.get(pk=book_id)
+
+    book_genries = Book_Genre.objects.filter(book=book_id)
+    genries = ''
+
+    for genr in book_genries:
+        genries += f'{genr.genre.name}, '
+
+
+
+    book_info = {
+        'name': book.name,
+        'author': book.author.__str__(),
+        'publication_year': book.publication_year,
+        'publisher': book.publisher,
+        'isbn': book.isbn,
+        'foto': book.foto,
+        'genries': genries.strip(', ')
+    }
+
+    data = {
+        'book': book_info
+    }
+
+    return render(
+        request,
+        'main/bookPage.html',
+        context=data
+    )
 
 def search(request):
     s_input = request.GET.get('search', 'None')
