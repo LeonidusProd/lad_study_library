@@ -271,6 +271,7 @@ span.errors {
 
 .book-info {
   display: flex;
+  flex-direction: row;
 }
 
 .book-cover img {

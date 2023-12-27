@@ -5,25 +5,27 @@
 {% block section %}
 
 <section class="book-info">
-    <h2>{{ book.name }}</h2>
     <div class="book-cover">
-      <img src="{{ book.foto }}" alt="Обложка книги">
+        <img src="{{ book.foto }}" alt="Обложка книги">
     </div>
     <div class="book-details">
-      <p><strong>Автор:</strong> {{ book.author }}</p>
-      <p><strong>Жанр:</strong> {{ book.genries }}</p>
-      <p><strong>Год издания:</strong> {{ book.publication_year }}</p>
-      <p><strong>Издательство:</strong> {{ book.publisher }}</p>
-      <p><strong>ISBN:</strong> {{ book.isbn }}</p>
-    </div>
-  </section>
+        <h2>{{ book.name }}</h2>
+        <p><strong>Автор:</strong> {{ book.author }}</p>
+        <p><strong>Жанр:</strong> {{ book.genries }}</p>
+        <p><strong>Год издания:</strong> {{ book.publication_year }}</p>
+        <p><strong>Издательство:</strong> {{ book.publisher }}</p>
+        <p><strong>ISBN:</strong> {{ book.isbn }}</p>
 
-  <section class="book-description">
+        
+    </div>
+</section>
+
+<section class="book-description">
     <h3>Описание книги</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tortor metus. Nullam euismod sapien vel nunc lobortis, nec consequat nibh pellentesque. Sed ac quam non urna imperdiet tincidunt. Fusce commodo, erat in eleifend finibus, nunc elit tristique leo, at lobortis felis mi nec velit. Nulla facilisi. Donec auctor ullamcorper nisi, id varius turpis bibendum eu. Donec aliquam ex vitae lectus vestibulum, sed rhoncus turpis maximus.</p>
-  </section>
+</section>
 
-  <section class="book-reviews">
+<section class="book-reviews">
     <h3>Отзывы о книге</h3>
     <ul>
       <li>
@@ -40,7 +42,7 @@
       <textarea id="review" name="review"></textarea>
       <button type="submit">Отправить</button>
     </form> -->
-  </section>
+</section>
 
 {% endblock section %}
 {% block footer %}{% endblock footer %}
