@@ -85,7 +85,34 @@ def add(request):
     return HttpResponse(output)
 
 def book_page(request, book_id):
-    # output = f'<h2>Страница с подробной информацией о книге с id={book_id}</h2>'
+    if request.user.is_authenticated:
+        print('____________Пользователь авторизован')
+        user_read_obj = User_Reading.objects.filter(user=request.user.pk)
+        user_read_books = [rb.book.pk for rb in user_read_obj]
+        print(f'____________{book_id}')
+        print(f'____________{user_read_books}')
+        if int(book_id) in user_read_books:
+            print('____________Книга в списке')
+            inReadList = True
+        else:
+            print('____________Книга не в списке')
+            inReadList = False
+    else:
+        print('____________Пользователь не авторизован')
+        inReadList = False
+
+
+    if request.method == 'POST':
+        if 'addToReadList' in request.POST:
+            print('addToReadList')
+            inReadList = True
+        if 'deleteFromReadList' in request.POST:
+            print('deleteFromReadList')
+            inReadList = False
+        if 'share' in request.POST:
+            print('share')
+
+
 
     book = Book.objects.get(pk=book_id)
 
@@ -108,7 +135,8 @@ def book_page(request, book_id):
     }
 
     data = {
-        'book': book_info
+        'book': book_info,
+        'inReadList': inReadList
     }
 
     return render(

@@ -16,7 +16,18 @@
         <p><strong>Издательство:</strong> {{ book.publisher }}</p>
         <p><strong>ISBN:</strong> {{ book.isbn }}</p>
 
-        
+        <form method="post">
+          {% csrf_token %}
+          {% if request.user.is_authenticated %}
+          {%if inReadList %}
+          <button type="submit" name="deleteFromReadList">Удалить из списка "Читаю"</button>
+          {% else %}
+          <button type="submit" name="addToReadList">Добавить в список "Читаю"</button>
+          {% endif %}
+          {% endif %}
+          
+          <button type="submit" name="share">Поделится</button>
+        </form>
     </div>
 </section>
 

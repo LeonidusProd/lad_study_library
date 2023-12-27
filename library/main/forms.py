@@ -72,4 +72,3 @@ class UserInfo(forms.Form):
         label_suffix='',
         widget=forms.EmailInput(attrs={'placeholder': 'Укажите вашу электронную почту', 'id': 'email'})
     )
-
