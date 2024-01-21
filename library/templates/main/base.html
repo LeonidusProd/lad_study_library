@@ -21,7 +21,7 @@
                 Регистрация
             </button> -->
             {% if request.user.is_authenticated %}
-                <span><a href="../user/">{{ user.username }}</a></span>
+                <span><a href="{% url 'personalCab' %}">{{ user.username }}</a></span>
                 <button onclick="logout()" class="lr_butt">
                     Выйти
                 </button>
@@ -39,7 +39,7 @@
     </header>
     <nav>
         <ul>
-            <li><a href="../">Главная</a></li>
+            <li><a href="{% url 'index' %}">Главная</a></li>
             <li><a href="../books/?page=1">Каталог</a></li>
             <li><a href="../about/">О нас</a></li>
             <li><a href="../contact/">Контакты</a></li>
@@ -68,15 +68,15 @@
         }
 
         function login() {
-          window.location.href = '../login';
+          window.location.href = "{% url 'login' %}";
         }
 
         function register() {
-          window.location.href = '../register';
+          window.location.href = "{% url 'register' %}";
         }
 
         function logout() {
-          window.location.href = '../logout';
+          window.location.href = "{% url 'logout' %}";
         }
     </script>
 </body>

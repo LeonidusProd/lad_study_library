@@ -2,13 +2,12 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-# class User(User):
-#     name = models.CharField(max_length=50, null=False, default='Undef')
-#     surname = models.CharField(max_length=50, null=False, default='Undef')
-#     # username = models.CharField(max_length=50, null=False, default='Undef')
-#     # email = models.CharField(max_length=100, null=False, default='Undef')
-#     # password = models.CharField(max_length=100, null=False, default='Undef')
-#     is_admin = models.BooleanField(null=False, default=False)
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    foto = models.ImageField(upload_to='users/', blank=True)
+
+    def __str__(self):
+        return f'Profile of {self.user.username}'
 
 class Author(models.Model):
     name = models.CharField(max_length=50, null=False)

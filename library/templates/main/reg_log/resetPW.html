@@ -1,0 +1,19 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block header %}{% endblock header %}
+{% block nav %}{% endblock nav %}
+{% block section %}
+
+<form method="post" class="login_container">
+    {% csrf_token %}
+    
+    {{ form.email.label_tag }}
+    {{ form.email.as_widget }}
+    <span class="errors">{{ form.email.errors.as_text|linebreaksbr|cut:"* " }}</span>
+
+    <button type="submit">Сбросить</button>
+</form>
+
+{% endblock section %}
+{% block footer %}{% endblock footer %}
+

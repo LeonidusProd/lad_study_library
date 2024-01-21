@@ -1,4 +1,5 @@
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -174,54 +175,39 @@ def contact(request):
 #         data = {'form': login_form}
 #         return render(request, 'main/login.html', context=data)
 
-# def register(request):
-#     # reg_form = RegistrationForm()
-#     # data = {'form': reg_form}
-#     # return render(request, 'main/register.html', context=data)
+
+def register(request):
+    if request.method == 'POST':
+        reg_form = RegistrationForm(request.POST)
+        if reg_form.is_valid():
+            new_user = reg_form.save(commit=False)
+            new_user.set_password(reg_form.cleaned_data['password1'])
+            new_user.save()
+            # Создать профиль пользователя, если нужно
+            # Profile.objects.create(user=new_user)
+            return redirect('login')
+    else:
+        reg_form = RegistrationForm()
+    data = {'form': reg_form}
+    return render(request, 'main/reg_log/register.html', context=data)
+
+# class register(CreateView):
+#     form_class = RegistrationForm
+#     template_name = 'main/register.html'
+#     success_url = '../login'
+
+# class login(LoginView):
+#     form_class = LoginForm
+#     template_name = 'main/login.html'
 #
-#     if request.method == 'POST':
-#         reg_form = RegistrationForm(request.POST)
-#         if reg_form.is_valid():
-#             # print(reg_form.cleaned_data)
-#             new_user = User(
-#                 username=reg_form.cleaned_data['username'],
-#                 email=reg_form.cleaned_data['email'],
-#                 password=reg_form.cleaned_data['password1']
-#             )
-#             new_user.save()
-#             return render(
-#                 request,
-#                 'main/index.html',
-#                 context={
-#                     'pop_books': popular_books,
-#                     # 'is_login': True,
-#                     # 'username': reg_form.cleaned_data['user_name']
-#                 }
-#             )
-#         else:
-#             # pass
-#             return HttpResponse("Ошибка введённых данных")
-#     else:
-#         reg_form = RegistrationForm()
-#         data = {'form': reg_form}
-#         return render(request, 'main/register.html', context=data)
+#     def get_success_url(self):
+#         return '../books/?page=1'
 
-class register(CreateView):
-    form_class = RegistrationForm
-    template_name = 'main/register.html'
-    success_url = '../login'
+# def logout_user(request):
+#     logout(request)
+#     return redirect('../login')
 
-class login(LoginView):
-    form_class = LoginForm
-    template_name = 'main/login.html'
-
-    def get_success_url(self):
-        return '../books/?page=1'
-
-def logout_user(request):
-    logout(request)
-    return redirect('../login')
-
+@login_required
 def personal_cab(request):
     if request.method == 'POST':
         form = UserInfo(request.POST)
