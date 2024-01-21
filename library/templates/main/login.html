@@ -3,7 +3,7 @@
 {% block header %}{% endblock header %}
 {% block nav %}{% endblock nav %}
 {% block section %}
-<form method="post" class="login_container">
+<form method="post" class="login_container" action="{% url 'login' %}">
     {% csrf_token %}
     <span class="errors">{{ form.non_field_errors.as_text|linebreaksbr|cut:"* " }}</span>
     {{ form.username.label_tag }}
@@ -12,6 +12,7 @@
     {{ form.password.label_tag }}
     {{ form.password.as_widget }}
     <!-- <span class="errors">{{ form.password.errors.as_text|linebreaksbr|cut:"* " }}</span> -->
+    <input type="hidden" name="next" value="{{ next }}"/>
 
     <button type="submit" onclick="reg()">Войти</button>
 </form>
@@ -26,7 +27,7 @@
     <button type="submit" onclick="log_in()">Войти</button>
 </div> -->
 
-<script>
+<!-- <script>
     function log_in(){
         var us_name = document.getElementById('username').value;
         var pass = document.getElementById('password').value;
@@ -36,7 +37,7 @@
             // alert('Куда!? А данные ввести?');
         }
     }
-</script>
+</script> -->
 
 {% endblock section %}
 {% block footer %}{% endblock footer %}

@@ -1,4 +1,5 @@
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -174,6 +175,9 @@ def contact(request):
 #         data = {'form': login_form}
 #         return render(request, 'main/login.html', context=data)
 
+def register(request):
+    pass
+
 # def register(request):
 #     # reg_form = RegistrationForm()
 #     # data = {'form': reg_form}
@@ -206,22 +210,23 @@ def contact(request):
 #         data = {'form': reg_form}
 #         return render(request, 'main/register.html', context=data)
 
-class register(CreateView):
-    form_class = RegistrationForm
-    template_name = 'main/register.html'
-    success_url = '../login'
+# class register(CreateView):
+#     form_class = RegistrationForm
+#     template_name = 'main/register.html'
+#     success_url = '../login'
 
-class login(LoginView):
-    form_class = LoginForm
-    template_name = 'main/login.html'
+# class login(LoginView):
+#     form_class = LoginForm
+#     template_name = 'main/login.html'
+#
+#     def get_success_url(self):
+#         return '../books/?page=1'
 
-    def get_success_url(self):
-        return '../books/?page=1'
+# def logout_user(request):
+#     logout(request)
+#     return redirect('../login')
 
-def logout_user(request):
-    logout(request)
-    return redirect('../login')
-
+@login_required
 def personal_cab(request):
     if request.method == 'POST':
         form = UserInfo(request.POST)

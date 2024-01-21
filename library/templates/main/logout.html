@@ -1,0 +1,12 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block header %}{% endblock header %}
+{% block nav %}{% endblock nav %}
+{% block section %}
+
+<h1 class="text_plug">Вы успешно вышли из аккаунта</h1>
+<p><a href="{% url 'login' %}">Войти снова</a></p>
+
+{% endblock section %}
+{% block footer %}{% endblock footer %}
+
