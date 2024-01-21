@@ -15,21 +15,32 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
+from django.urls import path, re_path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from main import views
 
 urlpatterns = [
-    path('search/', views.search, name='search'),
-    re_path(r'^books/book/(?P<book_id>\d+)', views.book_page, name='book'),
-    re_path(r'^books/', views.books, name='books'),
-    path('about/', views.about, name='about'),
-    path('contact/', views.contact, name='contact'),
-    path('login/', views.login.as_view(), name='login'),
-    path('logout/', views.logout_user, name='logout'),
-    path('user/', views.personal_cab, name='user'),
-    path('register/', views.register.as_view(), name='register'),
-    # path('books/', views.books),
-    # path('add/', views.add),
-    path('admin/', admin.site.urls, name='admin'),
-    path('', views.index, name='index'),
+    path('admin/', admin.site.urls),
+    path('', include('main.urls'))
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# urlpatterns = [
+#     path('search/', views.search),
+#     re_path(r'^books/book/(?P<book_id>\d+)', views.book_page),
+#     re_path(r'^books/', views.books),
+#     path('about/', views.about),
+#     path('contact/', views.contact),
+#     path('login/', views.login.as_view()),
+#     path('logout/', views.logout_user),
+#     path('user/', views.personal_cab),
+#     path('register/', views.register.as_view()),
+#     path('books/', views.books),
+#     path('add/', views.add),
+#     path('admin/', admin.site.urls),
+#     path('', views.index),
+# ]

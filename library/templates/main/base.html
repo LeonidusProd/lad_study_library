@@ -21,7 +21,7 @@
                 Регистрация
             </button> -->
             {% if request.user.is_authenticated %}
-                <span><a href="{% url 'user' %}">{{ user.username }}</a></span>
+                <span><a href="{% url 'personalCab' %}">{{ user.username }}</a></span>
                 <button onclick="logout()" class="lr_butt">
                     Выйти
                 </button>
