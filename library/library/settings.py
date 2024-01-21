@@ -132,3 +132,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST_USER = 'leonidus.pro@yandex.ru'
+DEFAULT_FROM_EMAIL = 'leonidus.pro@yandex.ru'
+EMAIL_HOST_PASSWORD = 'hxedygeznvsdpjvv'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'

@@ -175,40 +175,21 @@ def contact(request):
 #         data = {'form': login_form}
 #         return render(request, 'main/login.html', context=data)
 
-def register(request):
-    pass
 
-# def register(request):
-#     # reg_form = RegistrationForm()
-#     # data = {'form': reg_form}
-#     # return render(request, 'main/register.html', context=data)
-#
-#     if request.method == 'POST':
-#         reg_form = RegistrationForm(request.POST)
-#         if reg_form.is_valid():
-#             # print(reg_form.cleaned_data)
-#             new_user = User(
-#                 username=reg_form.cleaned_data['username'],
-#                 email=reg_form.cleaned_data['email'],
-#                 password=reg_form.cleaned_data['password1']
-#             )
-#             new_user.save()
-#             return render(
-#                 request,
-#                 'main/index.html',
-#                 context={
-#                     'pop_books': popular_books,
-#                     # 'is_login': True,
-#                     # 'username': reg_form.cleaned_data['user_name']
-#                 }
-#             )
-#         else:
-#             # pass
-#             return HttpResponse("Ошибка введённых данных")
-#     else:
-#         reg_form = RegistrationForm()
-#         data = {'form': reg_form}
-#         return render(request, 'main/register.html', context=data)
+def register(request):
+    if request.method == 'POST':
+        reg_form = RegistrationForm(request.POST)
+        if reg_form.is_valid():
+            new_user = reg_form.save(commit=False)
+            new_user.set_password(reg_form.cleaned_data['password1'])
+            new_user.save()
+            # Создать профиль пользователя, если нужно
+            # Profile.objects.create(user=new_user)
+            return redirect('login')
+    else:
+        reg_form = RegistrationForm()
+    data = {'form': reg_form}
+    return render(request, 'main/reg_log/register.html', context=data)
 
 # class register(CreateView):
 #     form_class = RegistrationForm

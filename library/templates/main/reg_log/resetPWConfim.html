@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block header %}{% endblock header %}
+{% block nav %}{% endblock nav %}
+{% block section %}
+
+{% if validlink %}
+    <form method="post" class="login_container">
+        {% csrf_token %}
+
+        {{ form.new_password1.label_tag }}
+        {{ form.new_password1.as_widget }}
+        <span class="errors">{{ form.new_password1.errors.as_text|linebreaksbr|cut:"* " }}</span>
+
+        {{ form.new_password2.label_tag }}
+        {{ form.new_password2.as_widget }}
+        <span class="errors">{{ form.new_password2.errors.as_text|linebreaksbr|cut:"* " }}</span>
+
+        <button type="submit">Сохранить новый пароль</button>
+    </form>
+{% else %}
+    <h1 class="text_plug">Недействительная ссылка сброса пароля.</h1>
+{% endif %}
+
+
+
+{% endblock section %}
+{% block footer %}{% endblock footer %}
