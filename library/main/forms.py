@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from .models import Profile
 
 
 class RegistrationForm(UserCreationForm):
@@ -69,19 +70,45 @@ class LoginForm(AuthenticationForm):
     )
 
 
-class UserInfo(forms.Form):
-    username = forms.CharField(
-        min_length=4,
-        max_length=50,
-        label='Имя пользователя',
-        label_suffix='',
-        widget=forms.TextInput(attrs={'placeholder': 'Введите имя пользователя', 'id': 'username'}),
+class UserEditForm(forms.ModelForm):
 
-    )
+    class Meta():
+        model = User
+        fields = ['first_name', 'last_name', 'username', 'email']
 
-    email = forms.CharField(
-        min_length=5,
-        label='Email',
-        label_suffix='',
-        widget=forms.EmailInput(attrs={'placeholder': 'Укажите вашу электронную почту', 'id': 'email'})
-    )
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        qs = User.objects.exclude(id=self.instance.id).filter(email=data)
+        if qs.exists():
+            raise forms.ValidationError(' Email already in use.')
+        return data
+
+
+class ProfileEditForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['foto']
+        widgets = {
+            'foto': forms.FileInput(attrs={'class': 'inputfile'}),
+        }
+        labels = {
+            'foto': 'Фото профиля'
+        }
+
+
+# class UserInfo(forms.Form):
+#     username = forms.CharField(
+#         min_length=4,
+#         max_length=50,
+#         label='Имя пользователя',
+#         label_suffix='',
+#         widget=forms.TextInput(attrs={'placeholder': 'Введите имя пользователя', 'id': 'username'}),
+#
+#     )
+#
+#     email = forms.CharField(
+#         min_length=5,
+#         label='Email',
+#         label_suffix='',
+#         widget=forms.EmailInput(attrs={'placeholder': 'Укажите вашу электронную почту', 'id': 'email'})
+#     )
