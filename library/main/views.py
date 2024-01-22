@@ -1,11 +1,13 @@
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
+import json
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
+from django.contrib import messages
 from .forms import *
 from .models import *
 
@@ -184,7 +186,7 @@ def register(request):
             new_user.set_password(reg_form.cleaned_data['password1'])
             new_user.save()
             # Создать профиль пользователя, если нужно
-            # Profile.objects.create(user=new_user)
+            Profile.objects.create(user=new_user)
             return redirect('login')
     else:
         reg_form = RegistrationForm()
@@ -210,33 +212,34 @@ def register(request):
 @login_required
 def personal_cab(request):
     if request.method == 'POST':
-        form = UserInfo(request.POST)
-        if form.is_valid():
-            user = User.objects.get(pk=request.user.pk)
-            user.username = form.cleaned_data['username']
-            user.email = form.cleaned_data['email']
-            user.save()
-
-            return render(
-                request,
-                'main/personalCab.html',
-                context=create_user_data(request, form)
-            )
-        else:
-            return HttpResponse("Ошибка введённых данных")
-    else:
-        form = UserInfo(initial={
-            'username': request.user.username,
-            'email': request.user.email
-        })
-
-        return render(
-            request,
-            'main/personalCab.html',
-            context=create_user_data(request, form)
+        user_form = UserEditForm(
+            instance=request.user,
+            data=request.POST
+        )
+        profile_form = ProfileEditForm(
+            instance=request.user.profile,
+            data=request.POST,
+            files=request.FILES
         )
 
-def create_user_data(request, form):
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, 'Профиль успешно обновлён')
+        else:
+            messages.error(request, 'Ошибка обновления профиля')
+    else:
+        user_form = UserEditForm(instance=request.user)
+        profile_form = ProfileEditForm(instance=request.user.profile)
+
+    return render(
+        request,
+        'main/personalCab.html',
+        context=create_user_data(request, user_form, profile_form)
+        )
+
+
+def create_user_data(request, user_form, profile_form):
     # form = UserInfo(initial={
     #     'username': request.user.username,
     #     'email': request.user.email
@@ -255,6 +258,7 @@ def create_user_data(request, form):
         )
 
     return {
-        'form': form,
+        'user_form': user_form,
+        'profile_form': profile_form,
         'reading_list': reading_list
     }

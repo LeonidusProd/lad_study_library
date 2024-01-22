@@ -24,13 +24,29 @@
 
   <div class="pers_data">
     <h2>Персональные данные</h2>
-    <form method="post" class="login_container">
+    <form method="post" class="login_container" enctype="multipart/form-data">
       {% csrf_token %}
 
-      {{ form.username.label_tag }}
-      {{ form.username.as_widget }}
-      {{ form.email.label_tag }}
-      {{ form.email.as_widget }}
+      
+      {{ profile_form.foto.label_tag }}
+      <img src="{{ profile_form.instance.foto.url }}" alt="Фото профиля" width="100" height="100">
+      {{ profile_form.foto.as_widget }}
+
+      {{ user_form.first_name.label_tag }}
+      {{ user_form.first_name.as_widget }}
+      <span class="errors">{{ user_form.first_name.errors.as_text|linebreaksbr|cut:"* " }}</span>
+
+      {{ user_form.last_name.label_tag }}
+      {{ user_form.last_name.as_widget }}
+      <span class="errors">{{ user_form.last_name.errors.as_text|linebreaksbr|cut:"* " }}</span>
+
+      {{ user_form.username.label_tag }}
+      {{ user_form.username.as_widget }}
+      <span class="errors">{{ user_form.username.errors.as_text|linebreaksbr|cut:"* " }}</span>
+
+      {{ user_form.email.label_tag }}
+      {{ user_form.email.as_widget }}
+      <span class="errors">{{ user_form.email.errors.as_text|linebreaksbr|cut:"* " }}</span>
 
       <button type="submit">Сохранить изменения</button>
 
