@@ -17,14 +17,14 @@ class Author(models.Model):
         return f'{self.name} {self.surname}'
 
 class Genre(models.Model):
-    name = models.CharField(max_length=50, null=False)
-    slug = models.CharField(max_length=50, null=False)
+    name = models.CharField(max_length=150, null=False)
+    slug = models.CharField(max_length=150, null=False)
 
     def __str__(self):
         return f'{self.name}'
 
 class Book(models.Model):
-    name = models.CharField(max_length=100, null=False)
+    name = models.CharField(max_length=1000, null=False)
     author = models.ForeignKey(Author, on_delete=models.PROTECT, null=False)
     publication_year = models.IntegerField(null=False)
     publisher = models.CharField(max_length=45, null=False)

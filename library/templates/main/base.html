@@ -22,9 +22,10 @@
             </button> -->
             {% if request.user.is_authenticated %}
                 <span><a href="{% url 'personalCab' %}">{{ user.username }}</a></span>
-                <button onclick="logout()" class="lr_butt">
-                    Выйти
-                </button>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="lr_butt">Выйти</button>
+                </form>
             {% else %}
                 <button onclick="login()" class="lr_butt">
                     Войти
