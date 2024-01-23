@@ -6,12 +6,14 @@
 <section id="featured-books">
     <h2>Популярные книги</h2>
 
-    {% for book in pop_books %}
+    {% for book in random_books %}
 
         <div class="book">
-            <img src="{{ book.foto }}" alt="Книга">
-            <h3>{{ book.name }}</h3>
-            <p>Автор: {{ book.author }}</p>
+            <a href="{% url 'book_page' book.id %}">
+                <img src="{{ book.foto }}" alt="Книга">
+                <h3>{{ book.name }}</h3>
+                <p>Автор: {{ book.author }}</p>
+            </a>
         </div>
 
     {% endfor %}
