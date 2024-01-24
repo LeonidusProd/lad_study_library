@@ -9,7 +9,7 @@
     {% for book in random_books %}
 
         <div class="book">
-            <a href="{% url 'book_page' book.id %}">
+            <a href="{% url 'main:book_page' book.id %}">
                 <img src="{{ book.foto }}" alt="Книга">
                 <h3>{{ book.name }}</h3>
                 <p>Автор: {{ book.author }}</p>

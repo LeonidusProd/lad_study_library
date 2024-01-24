@@ -21,8 +21,8 @@
                 Регистрация
             </button> -->
             {% if request.user.is_authenticated %}
-                <span><a href="{% url 'personalCab' %}">{{ user.username }}</a></span>
-                <form action="{% url 'logout' %}" method="post">
+                <span><a href="{% url 'main:personalCab' %}">{{ user.username }}</a></span>
+                <form action="{% url 'main:logout' %}?next={{ request.path }}" method="post">
                     {% csrf_token %}
                     <button type="submit" class="lr_butt">Выйти</button>
                 </form>
@@ -40,11 +40,11 @@
     </header>
     <nav>
         <ul>
-            <li><a href="{% url 'index' %}">Главная</a></li>
-            <li><a href="{% url 'books' %}">Каталог</a></li>
+            <li><a href="{% url 'main:index' %}">Главная</a></li>
+            <li><a href="{% url 'main:books' %}">Каталог</a></li>
             <!-- <li><a href="../books/?page=1">Каталог</a></li> -->
-            <li><a href="{% url 'about' %}">О нас</a></li>
-            <li><a href="{% url 'contact' %}">Контакты</a></li>
+            <li><a href="{% url 'main:about' %}">О нас</a></li>
+            <li><a href="{% url 'main:contact' %}">Контакты</a></li>
         </ul>
         <div class="search_inp">
             <input type="search" id="search_input" placeholder="Поиск по названию или автору...">
@@ -70,15 +70,15 @@
         }
 
         function login() {
-          window.location.href = "{% url 'login' %}";
+          window.location.href = "{% url 'main:login' %}";
         }
 
         function register() {
-          window.location.href = "{% url 'register' %}";
+          window.location.href = "{% url 'main:register' %}";
         }
 
         function logout() {
-          window.location.href = "{% url 'logout' %}";
+          window.location.href = "{% url 'main:logout' %}";
         }
     </script>
 </body>

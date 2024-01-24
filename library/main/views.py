@@ -2,12 +2,16 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 import json
-from django.shortcuts import render, redirect
+
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.contrib import messages
+
+from library import settings
 from .forms import *
 from .models import *
 import random
@@ -83,31 +87,30 @@ def add(request):
 
 def book_page(request, book_id):
     if request.user.is_authenticated:
-        print('____________Пользователь авторизован')
         user_read_obj = User_Reading.objects.filter(user=request.user.pk)
         user_read_books = [rb.book.pk for rb in user_read_obj]
-        print(f'____________{book_id}')
-        print(f'____________{user_read_books}')
         if int(book_id) in user_read_books:
-            print('____________Книга в списке')
             inReadList = True
         else:
-            print('____________Книга не в списке')
             inReadList = False
     else:
-        print('____________Пользователь не авторизован')
         inReadList = False
 
 
     if request.method == 'POST':
         if 'addToReadList' in request.POST:
-            print('addToReadList')
-            inReadList = True
+            if not inReadList:
+                user_read_obj = User_Reading(user=request.user, book=Book.objects.get(pk=book_id))
+                user_read_obj.save()
+                inReadList = True
         if 'deleteFromReadList' in request.POST:
-            print('deleteFromReadList')
-            inReadList = False
+            if inReadList:
+                user_read_obj = User_Reading.objects.get(user=request.user, book=Book.objects.get(pk=book_id))
+                user_read_obj.delete()
+                inReadList = False
         if 'share' in request.POST:
-            print('share')
+            return redirect('main:book_share', book_id=book_id)
+            pass
 
 
 
@@ -141,6 +144,34 @@ def book_page(request, book_id):
         'main/bookPage.html',
         context=data
     )
+
+
+def book_share(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+
+    sent = False
+
+    if request.method == 'POST':
+        share_form = BookShareForm(request.POST)
+
+        if share_form.is_valid():
+            cd = share_form.cleaned_data
+            book_url = request.build_absolute_uri(book.get_absolute_url())
+            subject = f"{cd['name']} рекомендует прочитать книгу {book}"
+            message = (f"Прочитай книгу {book.author}: {book}.\n\n"
+                       f"Вот ссылка: {book_url}.\n\n"
+                       f"PS: {cd['comment']}")
+
+            send_mail(subject, message, settings.EMAIL_HOST_USER, [cd['email_to']])
+            sent = True
+    else:
+        if request.user.is_authenticated:
+            share_form = BookShareForm(initial={'name': request.user.username})
+        else:
+            share_form = BookShareForm()
+
+    return render(request, 'main/bookShare.html', {'book': book, 'share_form': share_form, 'sent': sent})
+
 
 def search(request):
     s_input = request.GET.get('search', 'None')

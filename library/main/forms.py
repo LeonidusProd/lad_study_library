@@ -96,19 +96,22 @@ class ProfileEditForm(forms.ModelForm):
         }
 
 
-# class UserInfo(forms.Form):
-#     username = forms.CharField(
-#         min_length=4,
-#         max_length=50,
-#         label='Имя пользователя',
-#         label_suffix='',
-#         widget=forms.TextInput(attrs={'placeholder': 'Введите имя пользователя', 'id': 'username'}),
-#
-#     )
-#
-#     email = forms.CharField(
-#         min_length=5,
-#         label='Email',
-#         label_suffix='',
-#         widget=forms.EmailInput(attrs={'placeholder': 'Укажите вашу электронную почту', 'id': 'email'})
-#     )
+class BookShareForm(forms.Form):
+    name = forms.CharField(
+        max_length=50,
+        label='Имя отправителя',
+        label_suffix='',
+        widget=forms.TextInput(attrs={'placeholder': 'Введите имя отправителя', 'id': 'name'})
+    )
+    email_to = forms.CharField(
+        min_length=5,
+        label='Почта получателя',
+        label_suffix='',
+        widget=forms.EmailInput(attrs={'placeholder': 'Укажите электронную почту получателя', 'id': 'email'})
+    )
+    comment = forms.CharField(
+        label='Комментарий',
+        label_suffix='',
+        widget=forms.Textarea(attrs={'placeholder': 'Комментарий (по желанию)', 'id': 'email'}),
+        required=False
+    )
