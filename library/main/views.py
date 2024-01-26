@@ -196,7 +196,7 @@ def register(request):
             new_user.save()
             # Создать профиль пользователя, если нужно
             Profile.objects.create(user=new_user)
-            return redirect('login')
+            return redirect('main:login')
     else:
         reg_form = RegistrationForm()
     data = {'form': reg_form}
