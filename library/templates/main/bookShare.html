@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block header %}{% endblock header %}
+{% block nav %}{% endblock nav %}
+{% block section %}
+    {% if sent %}
+        <h1 class="text_plug">Сообщение успешно отправлено</h1>
+    {% else %}
+        <h1 class="text_plug">Поделится через email</h1>
+        <form method="post" class="login_container">
+            {% csrf_token %}
+
+            {{ share_form.name.label_tag }}
+            {{ share_form.name.as_widget }}
+            <span class="errors">{{ share_form.name.errors.as_text|linebreaksbr|cut:"* " }}</span>
+
+            {{ share_form.email_to.label_tag }}
+            {{ share_form.email_to.as_widget }}
+            <span class="errors">{{ share_form.email_to.errors.as_text|linebreaksbr|cut:"* " }}</span>
+
+            {{ share_form.comment.label_tag }}
+            {{ share_form.comment.as_widget }}
+            <span class="errors">{{ share_form.comment.errors.as_text|linebreaksbr|cut:"* " }}</span>
+
+            <button type="submit">Поделится</button>
+        </form>
+    {% endif %}
+{% endblock section %}
+{% block footer %}{% endblock footer %}

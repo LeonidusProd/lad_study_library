@@ -2,16 +2,33 @@ from django.urls import path, re_path, reverse_lazy
 from django.contrib.auth import views as auth_views
 from . import views
 from .forms import LoginForm
+app_name = 'main'
+
 
 urlpatterns = [
     # URLы входа и выхода
-    path('login/', auth_views.LoginView.as_view(template_name='main/reg_log/login.html', form_class=LoginForm), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='main/reg_log/logout.html'), name='logout'),
+    path(
+        'login/',
+        auth_views.LoginView.as_view(
+            template_name='main/reg_log/login.html',
+            form_class=LoginForm
+        ),
+        name='login'),
+    path(
+        'logout/',
+        auth_views.LogoutView.as_view(
+            template_name='main/reg_log/logout.html'
+        ),
+        name='logout'
+    ),
 
     # URLы смены пароля
     path(
         'change-password/',
-        auth_views.PasswordChangeView.as_view(template_name='main/reg_log/changePW.html', success_url=reverse_lazy('personalCab')),
+        auth_views.PasswordChangeView.as_view(
+            template_name='main/reg_log/changePW.html',
+            success_url=reverse_lazy('main:personalCab')
+        ),
         name='changePW'
     ),
     # Не используется, так как после смены редирект в ЛК
@@ -27,20 +44,22 @@ urlpatterns = [
         auth_views.PasswordResetView.as_view(
             template_name='main/reg_log/resetPW.html',
             email_template_name='main/reg_log/resetEmail.html',
-            success_url=reverse_lazy('resetPWDone')
+            success_url=reverse_lazy('main:resetPWDone')
         ),
         name='resetPW'
     ),
     path(
         'reset-password/done/',
-        auth_views.PasswordResetDoneView.as_view(template_name='main/reg_log/resetPWDone.html'),
+        auth_views.PasswordResetDoneView.as_view(
+            template_name='main/reg_log/resetPWDone.html'
+        ),
         name='resetPWDone'
     ),
     path(
         'reset-password/<uidb64>/<token>/',
         auth_views.PasswordResetConfirmView.as_view(
             template_name='main/reg_log/resetPWConfim.html',
-            success_url = reverse_lazy('index')
+            success_url=reverse_lazy('main:index')
         ),
         name='resetPWConfim'
     ),
@@ -54,20 +73,15 @@ urlpatterns = [
     path('register/', views.register, name='register'),
 
     path('user/', views.personal_cab, name='personalCab'),
+    path('books/', views.books, name='books'),
+    path('books/book/<int:book_id>', views.book_page, name='book_page'),
+    path('books/book/<int:book_id>/share', views.book_share, name='book_share'),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contact, name='contact'),
     path('', views.index, name='index'),
 ]
 
 # urlpatterns = [
 #     path('search/', views.search),
-#     re_path(r'^books/book/(?P<book_id>\d+)', views.book_page),
-#     re_path(r'^books/', views.books),
-#     path('about/', views.about),
-#     path('contact/', views.contact),
-#     path('login/', views.login.as_view()),
-#     path('logout/', views.logout_user),
-#
-#
-#     path('books/', views.books),
 #     path('add/', views.add),
-#
 # ]

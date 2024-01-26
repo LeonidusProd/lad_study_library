@@ -3,7 +3,7 @@
 {% block header %}{% endblock header %}
 {% block nav %}{% endblock nav %}
 {% block section %}
-<form method="post" class="login_container" action="{% url 'login' %}">
+<form method="post" class="login_container" action="{% url 'main:login' %}">
     {% csrf_token %}
     <span class="errors">{{ form.non_field_errors.as_text|linebreaksbr|cut:"* " }}</span>
     {{ form.username.label_tag }}
@@ -15,7 +15,7 @@
     <input type="hidden" name="next" value="{{ next }}"/>
 
     <button type="submit" onclick="reg()">Войти</button>
-    <span><a href="{% url 'register' %}">Ещё нет аккаунта?</a> | <a href="{% url 'resetPW' %}">Забыли пароль?</a></span>
+    <span><a href="{% url 'main:register' %}">Ещё нет аккаунта?</a> | <a href="{% url 'main:resetPW' %}">Забыли пароль?</a></span>
 </form>
 
 <!-- <div class="login_container">
