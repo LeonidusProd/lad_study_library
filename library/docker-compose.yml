@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  django:
+    build: .
+    container_name: django
+    volumes:
+      - static:/app/static
+      - media:/app/media
+    ports:
+      - "8050:8050"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    command: sh -c "python manage.py collectstatic --no-input &&
+      python manage.py makemigrations &&
+      python manage.py migrate &&
+      gunicorn library.wsgi -b 0.0.0.0:8050"
+
+  postgres:
+    image: postgres:alpine
+    container_name: postgres
+    restart: always
+    env_file:
+      - .env.db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+  nginx:
+    restart: always
+    build:
+      dockerfile: ./Dockerfile
+      context: ./nginx
+    container_name: nginx
+    ports:
+      - "85:85"
+    volumes:
+      - static:/app/static
+      - media:/app/media
+    links:
+      - django
+    depends_on:
+      - django
+
+volumes:
+  postgres_data:
+  static:
+  media:
