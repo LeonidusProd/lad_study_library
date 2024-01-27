@@ -1,6 +1,3 @@
-FROM nginx:alpine
-
-WORKDIR /app
-
+FROM nginx:1.19.0-alpine
 RUN rm /etc/nginx/conf.d/default.conf
-COPY django.conf /etc/nginx/conf.d
+COPY nginx.conf /etc/nginx/conf.d
