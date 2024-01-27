@@ -11,8 +11,8 @@ class Profile(models.Model):
         return f'Profile of {self.user.username}'
 
 class Author(models.Model):
-    name = models.CharField(max_length=50, null=False)
-    surname = models.CharField(max_length=50, null=False)
+    name = models.CharField(max_length=150, null=False)
+    surname = models.CharField(max_length=150, null=False)
 
     def __str__(self):
         return f'{self.name} {self.surname}'
@@ -28,7 +28,7 @@ class Book(models.Model):
     name = models.CharField(max_length=1000, null=False)
     author = models.ForeignKey(Author, on_delete=models.PROTECT, null=False)
     publication_year = models.IntegerField(null=False)
-    publisher = models.CharField(max_length=45, null=False)
+    publisher = models.CharField(max_length=100, null=False)
     isbn = models.CharField(max_length=100, null=False)
     foto = models.CharField(max_length=100, default='nofoto')
     is_available = models.BooleanField(null=False)

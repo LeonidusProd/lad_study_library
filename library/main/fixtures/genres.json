@@ -3,7 +3,7 @@
         "model": "main.Genre",
         "pk": 1,
         "fields": {
-            "name": "\u0411\u043e\u0435\u0432\u0438\u043a\u0438, \u043e\u0441\u0442\u0440\u043e\u0441\u044e\u0436\u0435\u0442\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Боевики, остросюжетная литература",
             "slug": "boeviki-ostrosuzhetnaya-literatura"
         }
     },
@@ -11,7 +11,7 @@
         "model": "main.Genre",
         "pk": 2,
         "fields": {
-            "name": "\u0414\u0435\u0442\u0435\u043a\u0442\u0438\u0432\u044b",
+            "name": "Детективы",
             "slug": "detektivy"
         }
     },
@@ -19,7 +19,7 @@
         "model": "main.Genre",
         "pk": 3,
         "fields": {
-            "name": "\u041a\u043b\u0430\u0441\u0441\u0438\u043a\u0430 \u0436\u0430\u043d\u0440\u0430",
+            "name": "Классика жанра",
             "slug": "klassika-zhanra"
         }
     },
@@ -27,7 +27,7 @@
         "model": "main.Genre",
         "pk": 4,
         "fields": {
-            "name": "\u041b\u044e\u0431\u043e\u0432\u043d\u044b\u0435 \u0440\u043e\u043c\u0430\u043d\u044b",
+            "name": "Любовные романы",
             "slug": "lubovnye-romany"
         }
     },
@@ -35,7 +35,7 @@
         "model": "main.Genre",
         "pk": 5,
         "fields": {
-            "name": "\u041f\u0440\u0438\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u044f",
+            "name": "Приключения",
             "slug": "priklucheniya"
         }
     },
@@ -43,7 +43,7 @@
         "model": "main.Genre",
         "pk": 6,
         "fields": {
-            "name": "\u0423\u0436\u0430\u0441\u044b / \u043c\u0438\u0441\u0442\u0438\u043a\u0430",
+            "name": "Ужасы / мистика",
             "slug": "uzhasy-mistika"
         }
     },
@@ -51,7 +51,7 @@
         "model": "main.Genre",
         "pk": 7,
         "fields": {
-            "name": "\u0424\u0430\u043d\u0442\u0430\u0441\u0442\u0438\u043a\u0430",
+            "name": "Фантастика",
             "slug": "fantastika"
         }
     },
@@ -59,7 +59,7 @@
         "model": "main.Genre",
         "pk": 8,
         "fields": {
-            "name": "\u0424\u044d\u043d\u0442\u0435\u0437\u0438",
+            "name": "Фэнтези",
             "slug": "fentezi"
         }
     },
@@ -67,7 +67,7 @@
         "model": "main.Genre",
         "pk": 9,
         "fields": {
-            "name": "\u042d\u0440\u043e\u0442\u0438\u043a\u0430 \u0438 \u0441\u0435\u043a\u0441",
+            "name": "Эротика и секс",
             "slug": "erotika-i-seks"
         }
     },
@@ -75,7 +75,7 @@
         "model": "main.Genre",
         "pk": 10,
         "fields": {
-            "name": "\u042e\u043c\u043e\u0440\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Юмористическая литература",
             "slug": "umoristicheskaya-literatura"
         }
     },
@@ -91,7 +91,7 @@
         "model": "main.Genre",
         "pk": 12,
         "fields": {
-            "name": "\u041b\u0435\u0433\u043a\u0430\u044f \u043f\u0440\u043e\u0437\u0430",
+            "name": "Легкая проза",
             "slug": "legkaya-proza"
         }
     },
@@ -99,7 +99,7 @@
         "model": "main.Genre",
         "pk": 13,
         "fields": {
-            "name": "C\u0442\u0438\u0445\u0438, \u043f\u043e\u044d\u0437\u0438\u044f",
+            "name": "Cтихи, поэзия",
             "slug": "ctihi-poeziya"
         }
     },
@@ -107,7 +107,7 @@
         "model": "main.Genre",
         "pk": 14,
         "fields": {
-            "name": "\u041a\u043b\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Классическая литература",
             "slug": "klassicheskaya-literatura"
         }
     },
@@ -115,7 +115,7 @@
         "model": "main.Genre",
         "pk": 15,
         "fields": {
-            "name": "\u041e\u0431 \u0438\u0441\u0442\u043e\u0440\u0438\u0438 \u0441\u0435\u0440\u044c\u0435\u0437\u043d\u043e",
+            "name": "Об истории серьезно",
             "slug": "ob-istorii-serezno"
         }
     },
@@ -123,7 +123,7 @@
         "model": "main.Genre",
         "pk": 16,
         "fields": {
-            "name": "\u041f\u044c\u0435\u0441\u044b, \u0434\u0440\u0430\u043c\u0430\u0442\u0443\u0440\u0433\u0438\u044f",
+            "name": "Пьесы, драматургия",
             "slug": "pesy-dramaturgiya"
         }
     },
@@ -131,7 +131,7 @@
         "model": "main.Genre",
         "pk": 17,
         "fields": {
-            "name": "\u0421\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u0430\u044f \u043f\u0440\u043e\u0437\u0430",
+            "name": "Современная проза",
             "slug": "sovremennaya-proza"
         }
     },
@@ -139,7 +139,7 @@
         "model": "main.Genre",
         "pk": 18,
         "fields": {
-            "name": "\u0411\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u0438 \u0438 \u043c\u0435\u043c\u0443\u0430\u0440\u044b",
+            "name": "Биографии и мемуары",
             "slug": "biografii-i-memuary"
         }
     },
@@ -147,7 +147,7 @@
         "model": "main.Genre",
         "pk": 19,
         "fields": {
-            "name": "\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u043b\u044c\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Документальная литература",
             "slug": "dokumentalnaya-literatura"
         }
     },
@@ -155,7 +155,7 @@
         "model": "main.Genre",
         "pk": 20,
         "fields": {
-            "name": "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Историческая литература",
             "slug": "istoricheskaya-literatura"
         }
     },
@@ -163,7 +163,7 @@
         "model": "main.Genre",
         "pk": 21,
         "fields": {
-            "name": "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0444\u0430\u043d\u0442\u0430\u0441\u0442\u0438\u043a\u0430",
+            "name": "Историческая фантастика",
             "slug": "istoricheskaya-fantastika"
         }
     },
@@ -171,7 +171,7 @@
         "model": "main.Genre",
         "pk": 22,
         "fields": {
-            "name": "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0434\u0435\u0442\u0435\u043a\u0442\u0438\u0432\u044b",
+            "name": "Исторические детективы",
             "slug": "istoricheskie-detektivy"
         }
     },
@@ -179,7 +179,7 @@
         "model": "main.Genre",
         "pk": 23,
         "fields": {
-            "name": "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043b\u044e\u0431\u043e\u0432\u043d\u044b\u0435 \u0440\u043e\u043c\u0430\u043d\u044b",
+            "name": "Исторические любовные романы",
             "slug": "istoricheskie-lubovnye-romany"
         }
     },
@@ -187,7 +187,7 @@
         "model": "main.Genre",
         "pk": 24,
         "fields": {
-            "name": "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u0440\u0438\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u044f",
+            "name": "Исторические приключения",
             "slug": "istoricheskie-priklucheniya"
         }
     },
@@ -195,7 +195,7 @@
         "model": "main.Genre",
         "pk": 25,
         "fields": {
-            "name": "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0444\u044d\u043d\u0442\u0435\u0437\u0438",
+            "name": "Историческое фэнтези",
             "slug": "istoricheskoe-fentezi"
         }
     },
@@ -203,7 +203,7 @@
         "model": "main.Genre",
         "pk": 26,
         "fields": {
-            "name": "\u041a\u043d\u0438\u0433\u0438 \u043e \u0432\u043e\u0439\u043d\u0435",
+            "name": "Книги о войне",
             "slug": "knigi-o-voyne"
         }
     },
@@ -211,7 +211,7 @@
         "model": "main.Genre",
         "pk": 27,
         "fields": {
-            "name": "\u041a\u043d\u0438\u0433\u0438 \u043e \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u044f\u0445",
+            "name": "Книги о путешествиях",
             "slug": "knigi-o-puteshestviyah"
         }
     },
@@ -219,7 +219,7 @@
         "model": "main.Genre",
         "pk": 28,
         "fields": {
-            "name": "\u041c\u043e\u0440\u0441\u043a\u0438\u0435 \u043f\u0440\u0438\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u044f",
+            "name": "Морские приключения",
             "slug": "morskie-priklucheniya"
         }
     },
@@ -227,7 +227,7 @@
         "model": "main.Genre",
         "pk": 29,
         "fields": {
-            "name": "\u041f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u043e \u043e\u0431 \u0438\u0441\u0442\u043e\u0440\u0438\u0438",
+            "name": "Популярно об истории",
             "slug": "populyarno-ob-istorii"
         }
     },
@@ -235,7 +235,7 @@
         "model": "main.Genre",
         "pk": 30,
         "fields": {
-            "name": "\u041a\u0430\u0434\u0440\u043e\u0432\u044b\u0439 \u043c\u0435\u043d\u0435\u0434\u0436\u043c\u0435\u043d\u0442",
+            "name": "Кадровый менеджмент",
             "slug": "kadrovyy-menedzhment"
         }
     },
@@ -243,7 +243,7 @@
         "model": "main.Genre",
         "pk": 31,
         "fields": {
-            "name": "\u041a\u0440\u0430\u0442\u043a\u043e\u0435 \u0441\u043e\u0434\u0435\u0440\u0436\u0430\u043d\u0438\u0435",
+            "name": "Краткое содержание",
             "slug": "kratkoe-soderzhanie"
         }
     },
@@ -251,7 +251,7 @@
         "model": "main.Genre",
         "pk": 32,
         "fields": {
-            "name": "\u041c\u0430\u0440\u043a\u0435\u0442\u0438\u043d\u0433, PR, \u0440\u0435\u043a\u043b\u0430\u043c\u0430",
+            "name": "Маркетинг, PR, реклама",
             "slug": "marketing-pr-reklama"
         }
     },
@@ -259,7 +259,7 @@
         "model": "main.Genre",
         "pk": 33,
         "fields": {
-            "name": "\u041c\u0435\u043d\u0435\u0434\u0436\u043c\u0435\u043d\u0442",
+            "name": "Менеджмент",
             "slug": "menedzhment"
         }
     },
@@ -267,7 +267,7 @@
         "model": "main.Genre",
         "pk": 34,
         "fields": {
-            "name": "\u041e \u0431\u0438\u0437\u043d\u0435\u0441\u0435 \u043f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u043e",
+            "name": "О бизнесе популярно",
             "slug": "o-biznese-populyarno"
         }
     },
@@ -275,7 +275,7 @@
         "model": "main.Genre",
         "pk": 35,
         "fields": {
-            "name": "\u041f\u0440\u043e\u0434\u0430\u0436\u0438",
+            "name": "Продажи",
             "slug": "prodazhi"
         }
     },
@@ -283,7 +283,7 @@
         "model": "main.Genre",
         "pk": 36,
         "fields": {
-            "name": "\u0424\u0438\u043d\u0430\u043d\u0441\u044b",
+            "name": "Финансы",
             "slug": "finansy"
         }
     },
@@ -291,7 +291,7 @@
         "model": "main.Genre",
         "pk": 37,
         "fields": {
-            "name": "\u042d\u043a\u043e\u043d\u043e\u043c\u0438\u043a\u0430",
+            "name": "Экономика",
             "slug": "ekonomika"
         }
     },
@@ -299,7 +299,7 @@
         "model": "main.Genre",
         "pk": 38,
         "fields": {
-            "name": "\u0411\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u043e\u0435 \u0434\u0435\u043b\u043e",
+            "name": "Банковское дело",
             "slug": "bankovskoe-delo"
         }
     },
@@ -307,7 +307,7 @@
         "model": "main.Genre",
         "pk": 39,
         "fields": {
-            "name": "\u0411\u0438\u0437\u043d\u0435\u0441-\u0441\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0438\u043a\u0438",
+            "name": "Бизнес-справочники",
             "slug": "biznes-spravochniki"
         }
     },
@@ -315,7 +315,7 @@
         "model": "main.Genre",
         "pk": 40,
         "fields": {
-            "name": "\u0411\u0443\u0445\u0443\u0447\u0435\u0442 / \u043d\u0430\u043b\u043e\u0433\u043e\u043e\u0431\u043b\u043e\u0436\u0435\u043d\u0438\u0435 / \u0430\u0443\u0434\u0438\u0442",
+            "name": "Бухучет / налогообложение / аудит",
             "slug": "buhuchet-nalogooblozhenie-audit"
         }
     },
@@ -323,7 +323,7 @@
         "model": "main.Genre",
         "pk": 41,
         "fields": {
-            "name": "\u0413\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0435 \u0438 \u043c\u0443\u043d\u0438\u0446\u0438\u043f\u0430\u043b\u044c\u043d\u043e\u0435 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435",
+            "name": "Государственное и муниципальное управление",
             "slug": "gosudarstvennoe-i-municipalnoe-upravlenie"
         }
     },
@@ -331,7 +331,7 @@
         "model": "main.Genre",
         "pk": 42,
         "fields": {
-            "name": "\u0414\u0435\u043b\u043e\u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0441\u0442\u0432\u043e",
+            "name": "Делопроизводство",
             "slug": "deloproizvodstvo"
         }
     },
@@ -339,7 +339,7 @@
         "model": "main.Genre",
         "pk": 43,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u0434\u0435\u043b\u043e\u0432\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Зарубежная деловая литература",
             "slug": "zarubezhnaya-delovaya-literatura"
         }
     },
@@ -347,7 +347,7 @@
         "model": "main.Genre",
         "pk": 44,
         "fields": {
-            "name": "\u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u0431\u0438\u0437\u043d\u0435\u0441",
+            "name": "Интернет-бизнес",
             "slug": "internet-biznes"
         }
     },
@@ -355,7 +355,7 @@
         "model": "main.Genre",
         "pk": 45,
         "fields": {
-            "name": "\u041a\u043e\u0440\u043f\u043e\u0440\u0430\u0442\u0438\u0432\u043d\u0430\u044f \u043a\u0443\u043b\u044c\u0442\u0443\u0440\u0430",
+            "name": "Корпоративная культура",
             "slug": "korporativnaya-kultura"
         }
     },
@@ -363,7 +363,7 @@
         "model": "main.Genre",
         "pk": 46,
         "fields": {
-            "name": "\u041b\u0438\u0447\u043d\u0430\u044f \u044d\u0444\u0444\u0435\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c",
+            "name": "Личная эффективность",
             "slug": "lichnaya-effektivnost"
         }
     },
@@ -371,7 +371,7 @@
         "model": "main.Genre",
         "pk": 47,
         "fields": {
-            "name": "\u041b\u0438\u0447\u043d\u044b\u0435 \u0444\u0438\u043d\u0430\u043d\u0441\u044b",
+            "name": "Личные финансы",
             "slug": "lichnye-finansy"
         }
     },
@@ -379,7 +379,7 @@
         "model": "main.Genre",
         "pk": 48,
         "fields": {
-            "name": "\u041b\u043e\u0433\u0438\u0441\u0442\u0438\u043a\u0430",
+            "name": "Логистика",
             "slug": "logistika"
         }
     },
@@ -387,7 +387,7 @@
         "model": "main.Genre",
         "pk": 49,
         "fields": {
-            "name": "\u041c\u0430\u043b\u044b\u0439 \u0438 \u0441\u0440\u0435\u0434\u043d\u0438\u0439 \u0431\u0438\u0437\u043d\u0435\u0441",
+            "name": "Малый и средний бизнес",
             "slug": "malyy-i-sredniy-biznes"
         }
     },
@@ -395,7 +395,7 @@
         "model": "main.Genre",
         "pk": 50,
         "fields": {
-            "name": "\u041c\u0435\u043d\u0435\u0434\u0436\u043c\u0435\u043d\u0442 \u0438 \u043a\u0430\u0434\u0440\u044b",
+            "name": "Менеджмент и кадры",
             "slug": "menedzhment-i-kadry"
         }
     },
@@ -403,7 +403,7 @@
         "model": "main.Genre",
         "pk": 51,
         "fields": {
-            "name": "\u041d\u0435\u0434\u0432\u0438\u0436\u0438\u043c\u043e\u0441\u0442\u044c",
+            "name": "Недвижимость",
             "slug": "nedvizhimost"
         }
     },
@@ -411,7 +411,7 @@
         "model": "main.Genre",
         "pk": 52,
         "fields": {
-            "name": "\u041e\u0440\u0430\u0442\u043e\u0440\u0441\u043a\u043e\u0435 \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u043e / \u0440\u0438\u0442\u043e\u0440\u0438\u043a\u0430",
+            "name": "Ораторское искусство / риторика",
             "slug": "oratorskoe-iskusstvo-ritorika"
         }
     },
@@ -419,7 +419,7 @@
         "model": "main.Genre",
         "pk": 53,
         "fields": {
-            "name": "\u041e\u0442\u0440\u0430\u0441\u043b\u0435\u0432\u044b\u0435 \u0438\u0437\u0434\u0430\u043d\u0438\u044f",
+            "name": "Отраслевые издания",
             "slug": "otraslevye-izdaniya"
         }
     },
@@ -427,7 +427,7 @@
         "model": "main.Genre",
         "pk": 54,
         "fields": {
-            "name": "\u041f\u0435\u0440\u0435\u0433\u043e\u0432\u043e\u0440\u044b",
+            "name": "Переговоры",
             "slug": "peregovory"
         }
     },
@@ -435,7 +435,7 @@
         "model": "main.Genre",
         "pk": 55,
         "fields": {
-            "name": "\u041f\u043e\u0438\u0441\u043a \u0440\u0430\u0431\u043e\u0442\u044b / \u043a\u0430\u0440\u044c\u0435\u0440\u0430",
+            "name": "Поиск работы / карьера",
             "slug": "poisk-raboty-karera"
         }
     },
@@ -443,7 +443,7 @@
         "model": "main.Genre",
         "pk": 56,
         "fields": {
-            "name": "\u041f\u043e\u043b\u0438\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435",
+            "name": "Политическое управление",
             "slug": "politicheskoe-upravlenie"
         }
     },
@@ -451,7 +451,7 @@
         "model": "main.Genre",
         "pk": 57,
         "fields": {
-            "name": "\u0420\u0430\u0431\u043e\u0442\u0430 \u0441 \u043a\u043b\u0438\u0435\u043d\u0442\u0430\u043c\u0438",
+            "name": "Работа с клиентами",
             "slug": "rabota-s-klientami"
         }
     },
@@ -459,7 +459,7 @@
         "model": "main.Genre",
         "pk": 58,
         "fields": {
-            "name": "\u0421\u0442\u0430\u0440\u0442\u0430\u043f\u044b \u0438 \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u0435 \u0431\u0438\u0437\u043d\u0435\u0441\u0430",
+            "name": "Стартапы и создание бизнеса",
             "slug": "startapy-i-sozdanie-biznesa"
         }
     },
@@ -467,7 +467,7 @@
         "model": "main.Genre",
         "pk": 59,
         "fields": {
-            "name": "\u0422\u0430\u0439\u043c-\u043c\u0435\u043d\u0435\u0434\u0436\u043c\u0435\u043d\u0442",
+            "name": "Тайм-менеджмент",
             "slug": "taym-menedzhment"
         }
     },
@@ -475,7 +475,7 @@
         "model": "main.Genre",
         "pk": 60,
         "fields": {
-            "name": "\u0426\u0435\u043d\u043d\u044b\u0435 \u0431\u0443\u043c\u0430\u0433\u0438 / \u0438\u043d\u0432\u0435\u0441\u0442\u0438\u0446\u0438\u0438",
+            "name": "Ценные бумаги / инвестиции",
             "slug": "cennye-bumagi-investicii"
         }
     },
@@ -483,7 +483,7 @@
         "model": "main.Genre",
         "pk": 61,
         "fields": {
-            "name": "\u0418\u0437\u0443\u0447\u0435\u043d\u0438\u0435 \u044f\u0437\u044b\u043a\u043e\u0432",
+            "name": "Изучение языков",
             "slug": "izuchenie-yazykov"
         }
     },
@@ -491,7 +491,7 @@
         "model": "main.Genre",
         "pk": 62,
         "fields": {
-            "name": "\u041a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Компьютерная литература",
             "slug": "komputernaya-literatura"
         }
     },
@@ -499,7 +499,7 @@
         "model": "main.Genre",
         "pk": 63,
         "fields": {
-            "name": "\u041a\u0443\u043b\u044c\u0442\u0443\u0440\u0430 \u0438 \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u043e",
+            "name": "Культура и искусство",
             "slug": "kultura-i-iskusstvo"
         }
     },
@@ -507,7 +507,7 @@
         "model": "main.Genre",
         "pk": 64,
         "fields": {
-            "name": "\u0421\u043b\u043e\u0432\u0430\u0440\u0438, \u0441\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0438\u043a\u0438",
+            "name": "Словари, справочники",
             "slug": "slovari-spravochniki"
         }
     },
@@ -515,7 +515,7 @@
         "model": "main.Genre",
         "pk": 65,
         "fields": {
-            "name": "\u0423\u0447\u0435\u0431\u043d\u0430\u044f \u0438 \u043d\u0430\u0443\u0447\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Учебная и научная литература",
             "slug": "uchebnaya-i-nauchnaya-literatura"
         }
     },
@@ -523,7 +523,7 @@
         "model": "main.Genre",
         "pk": 66,
         "fields": {
-            "name": "\u042d\u0437\u043e\u0442\u0435\u0440\u0438\u043a\u0430",
+            "name": "Эзотерика",
             "slug": "ezoterika"
         }
     },
@@ -531,7 +531,7 @@
         "model": "main.Genre",
         "pk": 67,
         "fields": {
-            "name": "\u0418\u0441\u0442\u043e\u0440\u0438\u0438 \u0438\u0437 \u0436\u0438\u0437\u043d\u0438",
+            "name": "Истории из жизни",
             "slug": "istorii-iz-zhizni"
         }
     },
@@ -539,7 +539,7 @@
         "model": "main.Genre",
         "pk": 68,
         "fields": {
-            "name": "\u041d\u0430\u0443\u0447\u043d\u043e-\u043f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Научно-популярная литература",
             "slug": "nauchno-populyarnaya-literatura"
         }
     },
@@ -547,7 +547,7 @@
         "model": "main.Genre",
         "pk": 69,
         "fields": {
-            "name": "\u0421\u0430\u043c\u043e\u0440\u0430\u0437\u0432\u0438\u0442\u0438\u0435 / \u043b\u0438\u0447\u043d\u043e\u0441\u0442\u043d\u044b\u0439 \u0440\u043e\u0441\u0442",
+            "name": "Саморазвитие / личностный рост",
             "slug": "samorazvitie-lichnostnyy-rost"
         }
     },
@@ -555,7 +555,7 @@
         "model": "main.Genre",
         "pk": 70,
         "fields": {
-            "name": "\u041a\u043d\u0438\u0433\u0438 \u043f\u043e \u043f\u0441\u0438\u0445\u043e\u043b\u043e\u0433\u0438\u0438",
+            "name": "Книги по психологии",
             "slug": "knigi-po-psihologii"
         }
     },
@@ -563,7 +563,7 @@
         "model": "main.Genre",
         "pk": 71,
         "fields": {
-            "name": "\u0420\u0435\u043b\u0438\u0433\u0438\u044f \u0438 \u0434\u0443\u0445\u043e\u0432\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Религия и духовная литература",
             "slug": "religiya-i-duhovnaya-literatura"
         }
     },
@@ -571,7 +571,7 @@
         "model": "main.Genre",
         "pk": 72,
         "fields": {
-            "name": "\u041a\u0440\u0430\u0441\u043e\u0442\u0430",
+            "name": "Красота",
             "slug": "krasota"
         }
     },
@@ -579,7 +579,7 @@
         "model": "main.Genre",
         "pk": 73,
         "fields": {
-            "name": "\u041c\u0435\u0434\u0438\u0446\u0438\u043d\u0430 \u0438 \u0437\u0434\u043e\u0440\u043e\u0432\u044c\u0435",
+            "name": "Медицина и здоровье",
             "slug": "medicina-i-zdorove"
         }
     },
@@ -587,7 +587,7 @@
         "model": "main.Genre",
         "pk": 74,
         "fields": {
-            "name": "\u0421\u043f\u043e\u0440\u0442",
+            "name": "Спорт",
             "slug": "sport"
         }
     },
@@ -595,7 +595,7 @@
         "model": "main.Genre",
         "pk": 75,
         "fields": {
-            "name": "\u0421\u0435\u043a\u0441 / \u0441\u0435\u043a\u0441-\u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u0430",
+            "name": "Секс / секс-руководства",
             "slug": "seks-seks-rukovodstva"
         }
     },
@@ -603,7 +603,7 @@
         "model": "main.Genre",
         "pk": 76,
         "fields": {
-            "name": "\u0410\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u0438 \u0438 \u041f\u0414\u0414",
+            "name": "Автомобили и ПДД",
             "slug": "avtomobili-i-pdd"
         }
     },
@@ -611,7 +611,7 @@
         "model": "main.Genre",
         "pk": 77,
         "fields": {
-            "name": "\u0418\u0437\u043e\u0431\u0440\u0430\u0437\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u043e",
+            "name": "Изобразительное искусство",
             "slug": "izobrazitelnoe-iskusstvo"
         }
     },
@@ -619,7 +619,7 @@
         "model": "main.Genre",
         "pk": 78,
         "fields": {
-            "name": "\u0418\u043d\u0442\u0435\u043b\u043b\u0435\u043a\u0442\u0443\u0430\u043b\u044c\u043d\u044b\u0435 \u0438\u0433\u0440\u044b",
+            "name": "Интеллектуальные игры",
             "slug": "intellektualnye-igry"
         }
     },
@@ -627,7 +627,7 @@
         "model": "main.Genre",
         "pk": 79,
         "fields": {
-            "name": "\u0418\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u043e \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0438",
+            "name": "Искусство фотографии",
             "slug": "iskusstvo-fotografii"
         }
     },
@@ -635,7 +635,7 @@
         "model": "main.Genre",
         "pk": 80,
         "fields": {
-            "name": "\u0419\u043e\u0433\u0430",
+            "name": "Йога",
             "slug": "yoga"
         }
     },
@@ -643,7 +643,7 @@
         "model": "main.Genre",
         "pk": 81,
         "fields": {
-            "name": "\u041a\u0443\u043b\u0438\u043d\u0430\u0440\u0438\u044f",
+            "name": "Кулинария",
             "slug": "kulinariya"
         }
     },
@@ -651,7 +651,7 @@
         "model": "main.Genre",
         "pk": 82,
         "fields": {
-            "name": "\u041c\u043e\u0434\u0430 \u0438 \u0441\u0442\u0438\u043b\u044c",
+            "name": "Мода и стиль",
             "slug": "moda-i-stil"
         }
     },
@@ -659,7 +659,7 @@
         "model": "main.Genre",
         "pk": 83,
         "fields": {
-            "name": "\u041e\u0442\u0434\u044b\u0445 / \u0442\u0443\u0440\u0438\u0437\u043c",
+            "name": "Отдых / туризм",
             "slug": "otdyh-turizm"
         }
     },
@@ -667,7 +667,7 @@
         "model": "main.Genre",
         "pk": 84,
         "fields": {
-            "name": "\u041e\u0445\u043e\u0442\u0430",
+            "name": "Охота",
             "slug": "ohota"
         }
     },
@@ -675,7 +675,7 @@
         "model": "main.Genre",
         "pk": 85,
         "fields": {
-            "name": "\u041f\u0440\u0438\u043a\u043b\u0430\u0434\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Прикладная литература",
             "slug": "prikladnaya-literatura"
         }
     },
@@ -683,7 +683,7 @@
         "model": "main.Genre",
         "pk": 86,
         "fields": {
-            "name": "\u041f\u0440\u0438\u0440\u043e\u0434\u0430 \u0438 \u0436\u0438\u0432\u043e\u0442\u043d\u044b\u0435",
+            "name": "Природа и животные",
             "slug": "priroda-i-zhivotnye"
         }
     },
@@ -691,7 +691,7 @@
         "model": "main.Genre",
         "pk": 87,
         "fields": {
-            "name": "\u0420\u0430\u0437\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u044f",
+            "name": "Развлечения",
             "slug": "razvlecheniya"
         }
     },
@@ -699,7 +699,7 @@
         "model": "main.Genre",
         "pk": 88,
         "fields": {
-            "name": "\u0420\u0443\u043a\u043e\u0434\u0435\u043b\u0438\u0435 \u0438 \u0440\u0435\u043c\u0435\u0441\u043b\u0430",
+            "name": "Рукоделие и ремесла",
             "slug": "rukodelie-i-remesla"
         }
     },
@@ -707,7 +707,7 @@
         "model": "main.Genre",
         "pk": 89,
         "fields": {
-            "name": "\u0420\u044b\u0431\u0430\u043b\u043a\u0430",
+            "name": "Рыбалка",
             "slug": "rybalka"
         }
     },
@@ -715,7 +715,7 @@
         "model": "main.Genre",
         "pk": 90,
         "fields": {
-            "name": "\u0421\u0430\u0434 \u0438 \u043e\u0433\u043e\u0440\u043e\u0434",
+            "name": "Сад и огород",
             "slug": "sad-i-ogorod"
         }
     },
@@ -723,7 +723,7 @@
         "model": "main.Genre",
         "pk": 91,
         "fields": {
-            "name": "\u0421\u0434\u0435\u043b\u0430\u0439 \u0441\u0430\u043c",
+            "name": "Сделай сам",
             "slug": "sdelay-sam"
         }
     },
@@ -731,7 +731,7 @@
         "model": "main.Genre",
         "pk": 92,
         "fields": {
-            "name": "\u0421\u043f\u043e\u0440\u0442 / \u0444\u0438\u0442\u043d\u0435\u0441",
+            "name": "Спорт / фитнес",
             "slug": "sport-fitnes"
         }
     },
@@ -739,7 +739,7 @@
         "model": "main.Genre",
         "pk": 93,
         "fields": {
-            "name": "\u0425\u043e\u0431\u0431\u0438 / \u0443\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u044f",
+            "name": "Хобби / увлечения",
             "slug": "hobbi-uvlecheniya"
         }
     },
@@ -747,7 +747,7 @@
         "model": "main.Genre",
         "pk": 94,
         "fields": {
-            "name": "\u0414\u043e\u043c\u0430\u0448\u043d\u0435\u0435 \u0445\u043e\u0437\u044f\u0439\u0441\u0442\u0432\u043e",
+            "name": "Домашнее хозяйство",
             "slug": "domashnee-hozyaystvo"
         }
     },
@@ -755,7 +755,7 @@
         "model": "main.Genre",
         "pk": 95,
         "fields": {
-            "name": "\u0414\u043e\u043c\u0430\u0448\u043d\u0438\u0435 \u0436\u0438\u0432\u043e\u0442\u043d\u044b\u0435",
+            "name": "Домашние животные",
             "slug": "domashnie-zhivotnye"
         }
     },
@@ -763,7 +763,7 @@
         "model": "main.Genre",
         "pk": 96,
         "fields": {
-            "name": "\u0418\u043d\u0442\u0435\u0440\u044c\u0435\u0440\u044b",
+            "name": "Интерьеры",
             "slug": "interery"
         }
     },
@@ -771,7 +771,7 @@
         "model": "main.Genre",
         "pk": 97,
         "fields": {
-            "name": "\u041a\u043e\u043c\u043d\u0430\u0442\u043d\u044b\u0435 \u0440\u0430\u0441\u0442\u0435\u043d\u0438\u044f",
+            "name": "Комнатные растения",
             "slug": "komnatnye-rasteniya"
         }
     },
@@ -779,7 +779,7 @@
         "model": "main.Genre",
         "pk": 98,
         "fields": {
-            "name": "\u0420\u0435\u043c\u043e\u043d\u0442 \u0432 \u043a\u0432\u0430\u0440\u0442\u0438\u0440\u0435",
+            "name": "Ремонт в квартире",
             "slug": "remont-v-kvartire"
         }
     },
@@ -787,7 +787,7 @@
         "model": "main.Genre",
         "pk": 99,
         "fields": {
-            "name": "\u0424\u044d\u043d\u0448\u0443\u0439 / \u0444\u044d\u043d-\u0448\u0443\u0439",
+            "name": "Фэншуй / фэн-шуй",
             "slug": "fen-shuy"
         }
     },
@@ -795,7 +795,7 @@
         "model": "main.Genre",
         "pk": 100,
         "fields": {
-            "name": "\u0428\u043a\u043e\u043b\u044c\u043d\u044b\u0435 \u0443\u0447\u0435\u0431\u043d\u0438\u043a\u0438",
+            "name": "Школьные учебники",
             "slug": "shkolnye-uchebniki"
         }
     },
@@ -803,7 +803,7 @@
         "model": "main.Genre",
         "pk": 101,
         "fields": {
-            "name": "\u0411\u0443\u043a\u0432\u0430\u0440\u0438",
+            "name": "Буквари",
             "slug": "bukvari"
         }
     },
@@ -811,7 +811,7 @@
         "model": "main.Genre",
         "pk": 102,
         "fields": {
-            "name": "\u0412\u043d\u0435\u043a\u043b\u0430\u0441\u0441\u043d\u043e\u0435 \u0447\u0442\u0435\u043d\u0438\u0435",
+            "name": "Внеклассное чтение",
             "slug": "vneklassnoe-chtenie"
         }
     },
@@ -819,7 +819,7 @@
         "model": "main.Genre",
         "pk": 103,
         "fields": {
-            "name": "\u0414\u0435\u0442\u0441\u043a\u0430\u044f \u043f\u043e\u0437\u043d\u0430\u0432\u0430\u0442\u0435\u043b\u044c\u043d\u0430\u044f",
+            "name": "Детская познавательная",
             "slug": "detskaya-poznavatelnaya"
         }
     },
@@ -827,7 +827,7 @@
         "model": "main.Genre",
         "pk": 104,
         "fields": {
-            "name": "\u0414\u0435\u0442\u0441\u043a\u0430\u044f \u043f\u0440\u043e\u0437\u0430",
+            "name": "Детская проза",
             "slug": "detskaya-proza"
         }
     },
@@ -835,7 +835,7 @@
         "model": "main.Genre",
         "pk": 105,
         "fields": {
-            "name": "\u0414\u0435\u0442\u0441\u043a\u0430\u044f \u0444\u0430\u043d\u0442\u0430\u0441\u0442\u0438\u043a\u0430",
+            "name": "Детская фантастика",
             "slug": "detskaya-fantastika"
         }
     },
@@ -843,7 +843,7 @@
         "model": "main.Genre",
         "pk": 106,
         "fields": {
-            "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0435 \u0434\u0435\u0442\u0435\u043a\u0442\u0438\u0432\u044b",
+            "name": "Детские детективы",
             "slug": "detskie-detektivy"
         }
     },
@@ -851,7 +851,7 @@
         "model": "main.Genre",
         "pk": 107,
         "fields": {
-            "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0435 \u043f\u0440\u0438\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u044f",
+            "name": "Детские приключения",
             "slug": "detskie-priklucheniya"
         }
     },
@@ -859,7 +859,7 @@
         "model": "main.Genre",
         "pk": 108,
         "fields": {
-            "name": "\u0414\u0435\u0442\u0441\u043a\u0438\u0435 \u0441\u0442\u0438\u0445\u0438",
+            "name": "Детские стихи",
             "slug": "detskie-stihi"
         }
     },
@@ -867,7 +867,7 @@
         "model": "main.Genre",
         "pk": 109,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u044b\u0435 \u0434\u0435\u0442\u0441\u043a\u0438\u0435 \u043a\u043d\u0438\u0433\u0438",
+            "name": "Зарубежные детские книги",
             "slug": "zarubezhnye-detskie-knigi"
         }
     },
@@ -875,7 +875,7 @@
         "model": "main.Genre",
         "pk": 110,
         "fields": {
-            "name": "\u041a\u043d\u0438\u0433\u0438 \u0434\u043b\u044f \u0434\u0435\u0442\u0435\u0439",
+            "name": "Книги для детей",
             "slug": "knigi-dlya-detey"
         }
     },
@@ -883,7 +883,7 @@
         "model": "main.Genre",
         "pk": 111,
         "fields": {
-            "name": "\u041a\u043d\u0438\u0433\u0438 \u0434\u043b\u044f \u0434\u043e\u0448\u043a\u043e\u043b\u044c\u043d\u0438\u043a\u043e\u0432",
+            "name": "Книги для дошкольников",
             "slug": "knigi-dlya-doshkolnikov"
         }
     },
@@ -891,7 +891,7 @@
         "model": "main.Genre",
         "pk": 112,
         "fields": {
-            "name": "\u041a\u043d\u0438\u0433\u0438 \u0434\u043b\u044f \u043f\u043e\u0434\u0440\u043e\u0441\u0442\u043a\u043e\u0432",
+            "name": "Книги для подростков",
             "slug": "knigi-dlya-podrostkov"
         }
     },
@@ -899,7 +899,7 @@
         "model": "main.Genre",
         "pk": 113,
         "fields": {
-            "name": "\u0421\u043a\u0430\u0437\u043a\u0438",
+            "name": "Сказки",
             "slug": "skazki"
         }
     },
@@ -907,7 +907,7 @@
         "model": "main.Genre",
         "pk": 114,
         "fields": {
-            "name": "\u0423\u0447\u0435\u0431\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Учебная литература",
             "slug": "uchebnaya-literatura"
         }
     },
@@ -915,7 +915,7 @@
         "model": "main.Genre",
         "pk": 115,
         "fields": {
-            "name": "\u0412\u043e\u0441\u043f\u0438\u0442\u0430\u043d\u0438\u0435 \u0434\u0435\u0442\u0435\u0439",
+            "name": "Воспитание детей",
             "slug": "vospitanie-detey"
         }
     },
@@ -923,7 +923,7 @@
         "model": "main.Genre",
         "pk": 116,
         "fields": {
-            "name": "\u0414\u0435\u0442\u0441\u043a\u0430\u044f \u043f\u0441\u0438\u0445\u043e\u043b\u043e\u0433\u0438\u044f",
+            "name": "Детская психология",
             "slug": "detskaya-psihologiya"
         }
     },
@@ -931,7 +931,7 @@
         "model": "main.Genre",
         "pk": 117,
         "fields": {
-            "name": "\u0417\u0434\u043e\u0440\u043e\u0432\u044c\u0435 \u0434\u0435\u0442\u0435\u0439",
+            "name": "Здоровье детей",
             "slug": "zdorove-detey"
         }
     },
@@ -939,7 +939,7 @@
         "model": "main.Genre",
         "pk": 118,
         "fields": {
-            "name": "\u041f\u0435\u0440\u0438\u043e\u0434\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0438\u0437\u0434\u0430\u043d\u0438\u044f",
+            "name": "Периодические издания",
             "slug": "periodicheskie-izdaniya"
         }
     },
@@ -947,7 +947,7 @@
         "model": "main.Genre",
         "pk": 119,
         "fields": {
-            "name": "\u041f\u043e\u0434\u043a\u0430\u0441\u0442\u044b",
+            "name": "Подкасты",
             "slug": "podkasty"
         }
     },
@@ -955,7 +955,7 @@
         "model": "main.Genre",
         "pk": 120,
         "fields": {
-            "name": "\u041f\u0443\u0431\u043b\u0438\u0446\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Публицистическая литература",
             "slug": "publicisticheskaya-literatura"
         }
     },
@@ -963,7 +963,7 @@
         "model": "main.Genre",
         "pk": 121,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u0434\u0440\u0430\u043c\u0430\u0442\u0443\u0440\u0433\u0438\u044f",
+            "name": "Зарубежная драматургия",
             "slug": "zarubezhnaya-dramaturgiya"
         }
     },
@@ -971,7 +971,7 @@
         "model": "main.Genre",
         "pk": 122,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u043a\u043b\u0430\u0441\u0441\u0438\u043a\u0430",
+            "name": "Зарубежная классика",
             "slug": "zarubezhnaya-klassika"
         }
     },
@@ -979,7 +979,7 @@
         "model": "main.Genre",
         "pk": 123,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Зарубежная компьютерная литература",
             "slug": "zarubezhnaya-komputernaya-literatura"
         }
     },
@@ -987,7 +987,7 @@
         "model": "main.Genre",
         "pk": 124,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430 \u043e \u043a\u0443\u043b\u044c\u0442\u0443\u0440\u0435 \u0438 \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u0435",
+            "name": "Зарубежная литература о культуре и искусстве",
             "slug": "zarubezhnaya-literatura-o-kulture-i-iskusstve"
         }
     },
@@ -995,7 +995,7 @@
         "model": "main.Genre",
         "pk": 125,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Зарубежная образовательная литература",
             "slug": "zarubezhnaya-obrazovatelnaya-literatura"
         }
     },
@@ -1003,7 +1003,7 @@
         "model": "main.Genre",
         "pk": 126,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u043f\u043e\u044d\u0437\u0438\u044f",
+            "name": "Зарубежная поэзия",
             "slug": "zarubezhnaya-poeziya"
         }
     },
@@ -1011,7 +1011,7 @@
         "model": "main.Genre",
         "pk": 127,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u043f\u0440\u0438\u043a\u043b\u0430\u0434\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Зарубежная прикладная литература",
             "slug": "zarubezhnaya-prikladnaya-literatura"
         }
     },
@@ -1019,7 +1019,7 @@
         "model": "main.Genre",
         "pk": 128,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u043f\u0441\u0438\u0445\u043e\u043b\u043e\u0433\u0438\u044f",
+            "name": "Зарубежная психология",
             "slug": "zarubezhnaya-psihologiya"
         }
     },
@@ -1027,7 +1027,7 @@
         "model": "main.Genre",
         "pk": 129,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u043f\u0443\u0431\u043b\u0438\u0446\u0438\u0441\u0442\u0438\u043a\u0430",
+            "name": "Зарубежная публицистика",
             "slug": "zarubezhnaya-publicistika"
         }
     },
@@ -1035,7 +1035,7 @@
         "model": "main.Genre",
         "pk": 130,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u0440\u0435\u043b\u0438\u0433\u0438\u043e\u0437\u043d\u0430\u044f \u0438 \u044d\u0437\u043e\u0442\u0435\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Зарубежная религиозная и эзотерическая литература",
             "slug": "zarubezhnaya-religioznaya-i-ezotericheskaya-literatura"
         }
     },
@@ -1043,7 +1043,7 @@
         "model": "main.Genre",
         "pk": 131,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u0440\u0435\u043b\u0438\u0433\u0438\u043e\u0437\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Зарубежная религиозная литература",
             "slug": "zarubezhnaya-religioznaya-literatura"
         }
     },
@@ -1051,7 +1051,7 @@
         "model": "main.Genre",
         "pk": 132,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u0441\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Зарубежная справочная литература",
             "slug": "zarubezhnaya-spravochnaya-literatura"
         }
     },
@@ -1059,7 +1059,7 @@
         "model": "main.Genre",
         "pk": 133,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u0441\u0442\u0430\u0440\u0438\u043d\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Зарубежная старинная литература",
             "slug": "zarubezhnaya-starinnaya-literatura"
         }
     },
@@ -1067,7 +1067,7 @@
         "model": "main.Genre",
         "pk": 134,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u0444\u0430\u043d\u0442\u0430\u0441\u0442\u0438\u043a\u0430",
+            "name": "Зарубежная фантастика",
             "slug": "zarubezhnaya-fantastika"
         }
     },
@@ -1075,7 +1075,7 @@
         "model": "main.Genre",
         "pk": 135,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u044d\u0437\u043e\u0442\u0435\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Зарубежная эзотерическая литература",
             "slug": "zarubezhnaya-ezotericheskaya-literatura"
         }
     },
@@ -1083,7 +1083,7 @@
         "model": "main.Genre",
         "pk": 136,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u043e\u0435 \u0444\u044d\u043d\u0442\u0435\u0437\u0438",
+            "name": "Зарубежное фэнтези",
             "slug": "zarubezhnoe-fentezi"
         }
     },
@@ -1091,7 +1091,7 @@
         "model": "main.Genre",
         "pk": 137,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u044b\u0435 \u0431\u043e\u0435\u0432\u0438\u043a\u0438",
+            "name": "Зарубежные боевики",
             "slug": "zarubezhnye-boeviki"
         }
     },
@@ -1099,7 +1099,7 @@
         "model": "main.Genre",
         "pk": 138,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u044b\u0435 \u0434\u0435\u0442\u0435\u043a\u0442\u0438\u0432\u044b",
+            "name": "Зарубежные детективы",
             "slug": "zarubezhnye-detektivy"
         }
     },
@@ -1107,7 +1107,7 @@
         "model": "main.Genre",
         "pk": 139,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u044b\u0435 \u043b\u044e\u0431\u043e\u0432\u043d\u044b\u0435 \u0440\u043e\u043c\u0430\u043d\u044b",
+            "name": "Зарубежные любовные романы",
             "slug": "zarubezhnye-lubovnye-romany"
         }
     },
@@ -1115,7 +1115,7 @@
         "model": "main.Genre",
         "pk": 140,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u044b\u0435 \u043f\u0440\u0438\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u044f",
+            "name": "Зарубежные приключения",
             "slug": "zarubezhnye-priklucheniya"
         }
     },
@@ -1123,7 +1123,7 @@
         "model": "main.Genre",
         "pk": 141,
         "fields": {
-            "name": "\u0417\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u044b\u0439 \u044e\u043c\u043e\u0440",
+            "name": "Зарубежный юмор",
             "slug": "zarubezhnyy-umor"
         }
     },
@@ -1131,7 +1131,7 @@
         "model": "main.Genre",
         "pk": 142,
         "fields": {
-            "name": "\u0421\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u0430\u044f \u0437\u0430\u0440\u0443\u0431\u0435\u0436\u043d\u0430\u044f \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+            "name": "Современная зарубежная литература",
             "slug": "sovremennaya-zarubezhnaya-literatura"
         }
     },
@@ -1139,7 +1139,7 @@
         "model": "main.Genre",
         "pk": 143,
         "fields": {
-            "name": "\u041a\u043e\u043c\u0438\u043a\u0441\u044b / \u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0440\u043e\u043c\u0430\u043d\u044b",
+            "name": "Комиксы / графические романы",
             "slug": "komiksy-graficheskie-romany"
         }
     },
@@ -1147,7 +1147,7 @@
         "model": "main.Genre",
         "pk": 144,
         "fields": {
-            "name": "\u041a\u043e\u043c\u0438\u043a\u0441\u044b \u0438 \u043c\u0430\u043d\u0433\u0430: \u0434\u0440\u0443\u0433\u043e\u0435",
+            "name": "Комиксы и манга: другое",
             "slug": "komiksy-i-manga-drugoe"
         }
     },
@@ -1155,7 +1155,7 @@
         "model": "main.Genre",
         "pk": 145,
         "fields": {
-            "name": "\u041c\u0430\u043d\u0433\u0430 / \u043c\u0430\u043d\u0445\u0432\u0430 / \u043c\u0430\u043d\u044c\u0445\u0443\u0430",
+            "name": "Манга / манхва / маньхуа",
             "slug": "manga-manhva-manhua"
         }
     }

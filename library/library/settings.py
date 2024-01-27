@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +23,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#%o5y&)c$h8jh@lxa!r)e3cbu7n^tfjz2mxegk#z$bs_n_u$6y'
+SECRET_KEY = str(os.environ.get(
+    "SECRET_KEY",
+    default='django-insecure-#%o5y&)c$h8jh@lxa!r)e3cbu7n^tfjz2mxegk#z$bs_n_u$6y'
+))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.environ.get("DEBUG", default=1)))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = str(os.environ.get(
+    "DJANGO_ALLOWED_HOSTS",
+    default='localhost 127.0.0.1'
+)).split(" ")
+CSRF_TRUSTED_ORIGINS = str(os.environ.get(
+    "CSRF_TRUSTED_ORIGINS",
+    default='https://*.localhost:8000 https://*.127.0.0.1:8000 http://localhost:8000 http://127.0.0.1:8000'
+)).split(" ")
 
 
 # Application definition
@@ -39,7 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.postgres'
+    'django.contrib.postgres',
+    "upload",
 ]
 
 MIDDLEWARE = [
@@ -79,12 +92,13 @@ WSGI_APPLICATION = 'library.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'library',
-        'USER': 'library',
-        'PASSWORD': '1234',
-        'HOST': 'localhost'
+    "default": {
+        "ENGINE": os.environ.get("SQL_ENGINE", default="django.db.backends.postgresql"),
+        "NAME": os.environ.get("SQL_DATABASE", default="library"),
+        "USER": os.environ.get("SQL_USER", default="library"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD", default="1234"),
+        "HOST": os.environ.get("SQL_HOST", default="localhost"),
+        "PORT": os.environ.get("SQL_PORT", default="5432"),
     }
 }
 
@@ -123,10 +137,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+if DEBUG:
+    STATIC_URL = 'static/'
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static')
+    ]
+else:
+    STATIC_URL = "/static/"
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -140,14 +161,11 @@ LOGOUT_URL = 'main:logout'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_HOST_USER = 'leonidus.pro@yandex.ru'
-DEFAULT_FROM_EMAIL = 'leonidus.pro@yandex.ru'
-EMAIL_HOST_PASSWORD = 'hxedygeznvsdpjvv'
+EMAIL_HOST_USER = str(os.environ.get('EMAIL_HOST_USER', default='leonidus.pro@yandex.ru'))
+DEFAULT_FROM_EMAIL = str(os.environ.get('DEFAULT_FROM_EMAIL', default='leonidus.pro@yandex.ru'))
+EMAIL_HOST_PASSWORD = str(os.environ.get('EMAIL_HOST_PASSWORD',default='hxedygeznvsdpjvv'))
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',

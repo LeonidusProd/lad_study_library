@@ -18,25 +18,25 @@ class Migration(migrations.Migration):
             name='Author',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('surname', models.CharField(max_length=50)),
+                ('name', models.CharField(max_length=150)),
+                ('surname', models.CharField(max_length=150)),
             ],
         ),
         migrations.CreateModel(
             name='Genre',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('slug', models.CharField(max_length=50)),
+                ('name', models.CharField(max_length=150)),
+                ('slug', models.CharField(max_length=150)),
             ],
         ),
         migrations.CreateModel(
             name='Book',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
+                ('name', models.CharField(max_length=1000)),
                 ('publication_year', models.IntegerField()),
-                ('publisher', models.CharField(max_length=45)),
+                ('publisher', models.CharField(max_length=100)),
                 ('isbn', models.CharField(max_length=100)),
                 ('foto', models.CharField(default='nofoto', max_length=100)),
                 ('is_available', models.BooleanField()),
